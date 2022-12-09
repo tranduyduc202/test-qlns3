@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background-image: url(./img/background-dangnhap.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.wapper{
+    margin: auto ;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    padding: 13px;
+}
+.wapper-heading{
+    text-align: center;
+     
+}
+.wapper-heading{
+    font-size: 21px;
+    color: #fff;
+}
+form{
+    text-align: center;
+    margin: 16px 0px;
+}
+
+.input__field{
+    margin: 6px 0px;
+}
+.input__field input{
+    width: 200px;
+    padding: 5px;
+      
+    border:1px solid #7bd67b;
+    border-radius: 3px;
+    outline: none;
+    font-size: 10px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+.btn-login{
+    margin-top: 10px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    background-color: #7bd67b;
+    color: #fff;
+    width: 200px;
+}
+.btn-login:hover{
+    background-color: #2de12d;
+}
+.signup-link{
+    
+}
+.btn-signup{
+    display:flex;
+     float: right;
+     margin:10px 20px;
+     background-color: transparent;
+     border: none;
+}
+.btn-signup a{
+    text-decoration: none;
+    color:#7bd67b;
+}

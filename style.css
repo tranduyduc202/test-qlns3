@@ -1,0 +1,449 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    width: 100%;
+    display: flex;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #ccc;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+.menu{
+   
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    left: 0;
+    background-color: #333;
+    margin: 0px;
+}
+.content{
+    width:83%;
+    margin-left: 200px;
+}
+.header-top{
+    display: flex;
+    margin: 0px 10px;
+}
+.content-top{
+    height: 30px;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #9b9696;
+    
+}
+.content-top span{
+    margin: 0px 10px;
+    font-size: 13px;
+    line-height: 20px;
+    
+}
+.header-top-search{
+    width: 130px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    
+    border-radius: 2px;
+    background-color: #ccc;
+}
+.header-top-search input{
+    outline: none;
+    height: 100%;
+    width: 100%;
+    padding: 2px 5px;
+    font-size: 10px;
+    border: none;
+    background-color: #e2dddd;
+    border-radius: 3px;
+}
+.header-top-search .search{ 
+    position: absolute;
+    right:6px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    
+}
+.content-logo{
+    background-color: #0063c6;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+}
+.header-top-2 a{
+    color: #9b9696;
+}
+.content-body img{
+   width: 350px;
+   height: 100%;
+   margin: 0px auto;
+}
+.content-body{
+    height: 100vh;
+}
+.content-add{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+    padding: 0px 15px;
+}
+.add-staff{
+    padding:7px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #126fcb;
+    color: #fff;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    height: 80px;
+    width: 200px;
+    position: relative;
+}
+.add-staff a{
+    position: absolute;
+    background-color: #06b206;
+    padding: 4px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.add-staff span{
+  font-size: 20px;
+  font-weight: 900;
+  position: relative;
+}
+.add-staff a{
+    position: absolute;
+    right: 10px;
+}
+ .add-staff-item{
+    width: 100%;
+    height: 15px;
+    background-color:#034281;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+    cursor: pointer;
+ }
+ .add-staff.xanh{
+    background-color:#06b206;
+ }
+ .add-staff-item.white{
+    background-color:#9b9696;
+ }
+ .add-staff-item.xanh{
+    background-color: #025202;
+ }
+ .statisitcal-item.xanh{
+    background-color:#06b206;
+ }
+ .statisitcal-item.vang{
+    background-color: #e7b51e;
+ }
+ .add-staff-item.vang{
+    background-color: #bd9009;
+ }
+ .statisitcal-item.xanhlam{
+    background-color: #00FFFF;
+ }
+ .add-staff-item.xanhlam{
+    background-color: #05a8a8;
+ }
+ .add-staff-item i{
+    font-size: 13px;
+    margin:2px 0px 0px 5px;
+ }
+ .statisitcal{
+    width: 100%;
+    padding:5px 15px;
+    
+ }
+ .statisitcal-text{
+    padding: 10px;
+    width: 100%;
+    background-color:#044a91;
+    border-radius: 6px;
+    
+ }
+ .statisitcal-content{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+ }
+ .statisitcal-content.move{
+    position: relative;
+    right: -120%;
+    transition:linear 1s;
+    display: none;
+ }
+ .statisitcal-item{
+    padding: 10px 20px;
+    color: #333;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    width: 200px;
+     
+    box-shadow: 0 0 3px #333;
+ }
+ .statisitcal-chu{
+    display: flex;
+    justify-content: space-between;
+ }
+ .statisitcal-chu span{
+    font-size: 30px;
+ }
+ .statisitcal-chu p{
+    font-size: 14px;
+ }
+ .statisitcal-chu i{
+    font-size: 50px;
+    align-items: center;
+    color: #9b9696;
+ }
+ .menu-logo{
+    color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid#ccc;
+    display: flex;
+    align-items: center;
+ }
+.menu-logo img{
+    width: 30px;    
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 50px;
+}
+li{
+    list-style: none;
+}
+.menu-content{
+    padding: 10px;
+}
+.menu-content li{
+    margin-bottom: 20px;
+    color: #d7d7d7;
+    font-size: 13px;
+}
+.menu-content li:nth-child(4){
+     display: flex;
+     align-items: center;
+     position: relative;
+     
+}
+.menu-content li:nth-child(5){
+    
+    align-items: center;
+    position: relative;
+    
+}
+.wage:checked ~ .table-salary{
+     display: block;
+}
+.table-salary{
+     padding: 5px 0px 0px 5px;
+    font-size: 12px;
+     
+ }
+ .table-salary.move{
+     display: none;
+ }
+ .table-salary p{
+  display: flex;
+  align-items: center;
+  padding: 3px 0px 2px 5px
+ }
+ 
+ .table-salary p input{
+    width: 9px;
+    border: none;
+    padding-right: 5px;
+    margin-right: 5px;
+ }
+ .wage-arrow.move{
+    display: none;
+ }
+ .wage-arrow1.move{
+    display: none;
+    font-size: 12px;
+ }
+ .wage-arrow1{
+    font-size: 16px;
+ }
+ 
+ .wage-list{
+    display: flex;
+    align-items: center;
+ }
+.menu-content li:nth-child(6){
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.menu-content li:nth-child(7){
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+.menu-content li i{
+    margin-right: 5px;
+}
+.menu-content li:hover{
+    color:#fff;
+    cursor: pointer;
+}
+.menu-content li .arrow-right{
+   position: absolute;
+   right: 5px;
+}
+.board-Staff{
+    margin-top: 20px;
+    width: 550px;
+     
+    box-shadow: 0 0 3px #333;
+    padding:10px 20px;
+    border-radius: 3px;
+    background-image: url(img/download-bang-nhanvien.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+.board-Staff .move{
+    color: red;
+}
+.board-Staff-item{
+    margin: 6px 0px;
+    display: flex;
+    align-items: center;
+}
+.board-Staff-item input{
+    border: none;
+    border-radius: 3px;
+    padding: 4px 6px;
+    outline: none;
+    box-shadow: 0 0 2px #333;
+    margin:1px 5px 1px 5px;
+    font-size: 11px;
+    width:160px;
+}
+.board-Staff-item input[type="radio"]{
+    width: 13px;
+    box-shadow: none;
+}
+
+.board-Staff-item span{
+    width: 100px;
+    float: left;
+    font-size: 13px;
+}
+.board-Staff button{
+    padding: 7px 20px;
+    border: none;
+    border-radius: 9px;
+    background-color: rgb(231, 220, 220)  ;
+    cursor: pointer;
+}
+.board-Staff button:hover{
+    background-color: #9b9696;
+}
+.board-Staff.move{
+    display: none;
+}
+#male,#famale{
+     box-shadow: none;
+     margin-right: 5px;
+}
+#table-info,#table-info tr,#table-info th{
+    box-shadow: 0 0 1px black;
+    padding: 15PX 0PX;
+}
+#table-info{
+    margin-top: 20px;
+     
+}
+#table-info.move{
+    display: none;
+}
+#table-info td{
+    padding: 15px 8px;
+    
+}
+/* #table-info td.green{
+     color: #0063c6;
+}
+#table-info td.red{
+    color: red;
+} */
+table{
+    border-collapse:collapse;
+}
+ .board-Staff-item small{
+    margin-left: 5px;
+ }
+ .infor-Member tr{
+    background-image: url(img/download-bang-nhanvien.jpg);
+    background-position:left;
+    background-size:auto;
+    opacity: 0.8;
+    color:black;
+ }
+ .edit-staff.move{
+    display: none;
+ }
+ .edit-staff tr{
+    background-image: url(img/download-bang-nhanvien.jpg);
+    background-position:left;
+    background-size:auto;
+    opacity: 0.8;
+    color:black;
+    box-shadow: 0 0 1px black;
+    padding: 15px 0px;
+ }
+ .edit-staff td{
+    padding: 15px 8px;
+    font-size: 13px;
+ }
+ .edit-staff th{
+    padding: 15px 8px;
+ }
+ .edit-staff{
+    margin-top: 20px;
+    box-shadow: 0 0 1px black;
+    padding: 15PX 0PX;
+ }
+ .home-page{
+    cursor: pointer;
+    color: rgb(110, 102, 102);
+ }
+ .home-page:hover{
+    color: black;
+ }
+ .managae-salary{
+    position: relative;
+ }
+  
+  

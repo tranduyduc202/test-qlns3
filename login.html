@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phan mam nhan su</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body onload="listMember()">
+    <header>
+        <div class="menu">
+            <div class="menu-logo">
+                <img src="./img/download.png" alt="">
+                <h3>QLNS VMU</h3>
+            </div>
+             <ul class="menu-content">
+                <li>+Thêm Nhân Viên</li>
+                <li><i class='bx bxs-bar-chart-alt-2'></i>
+                  <span>Thêm nhân viên</span> </li>
+                <li>Chấm Công</li>
+                <li><i class='bx bxs-user'></i> Người Dùng <i class='bx bxs-chevron-left arrow-right'></i></li>
+                <li class="wage"> 
+                    <div class="wage-list">
+                        <i class='bx bxs-down-arrow-circle'></i> Quản lý Lương <i class='bx bxs-chevron-left arrow-right wage-arrow'></i>
+                        <i class='bx bx-chevron-down arrow-right wage-arrow1 move'></i>
+                    </div>
+                        <div>ducdz</div>
+                        <div class="table-salary move">
+                            <p><input type="radio" name="wage"> <small>Bang tinh luong</small> <br></p>
+                             
+                             <p><input type="radio" name="wage"> <span class="salary">Tinh luong</span></p>
+                             
+                        </div>
+                               
+                </li>
+                <li class="li6">Quản Lý</li>
+                <li><i class='bx bx-image'></i> Quản lý ảnh</li>
+                <li><i class='bx bxs-user-rectangle'></i> Nhân Viên <i class='bx bxs-chevron-left arrow-right'></i></li>
+                <li>Danh mục <i class='bx bxs-chevron-left arrow-right '></i></li>
+             </ul>
+        </div>
+        <div class="content">
+            <div class="content-top">
+                <div class="header-top">
+                    <div class="header-top-icon">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                     <span class="home-page">Trang Chủ</span>
+                     <span>Liên Hệ</span>
+                     <div class="header-top-search">
+                        <input type="text" >
+                        <i class='bx bx-search search'></i>
+                     </div>
+                </div>
+                <div class="header-top-2">
+                    <a href="#"><i class='bx bxl-windows'></i></a>
+                    <a href="#"><i class='bx bx-user'></i></a>
+                </div>
+            </div>
+             <div class="content-body">
+                <div class="content-logo">
+                    <img src="./img/logo11.png" alt="">
+                </div>
+                <div class="content-add">
+                    <div class="add-staff">
+                        <span>Thêm nhân viên</span>
+                        <div class="add-staff-item add-Staff-move">
+                            <p>xem</p>
+                            <i class='bx bxs-right-arrow-circle'></i>
+                        </div>
+                        
+                    </div>
+                    <div class="add-staff xanh Timekeeping">
+                        <span>xoa/sua nhan vien</span>
+                        <div class="add-staff-item xanh">
+                            <p>xem</p>
+                            <i class='bx bxs-right-arrow-circle'></i>
+                        </div>
+                    </div>
+                    <div class="add-staff">
+                        <span>DSNV:</span>
+                        <a href="#">Đang làm việc </a>
+                        <div class="add-staff-item ">
+                            <p>xem</p>
+                            <i class='bx bxs-right-arrow-circle'></i>
+                        </div>
+                    </div>
+                    <div class="add-staff xanh">
+                        <span>Tim kiếm NV</span>
+                        <div class="add-staff-item xanh">
+                            <p>xem</p>
+                            <i class='bx bxs-right-arrow-circle'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="statisitcal">
+                    <div class="statisitcal-text">
+                        <span>Thống kê</span>
+                    </div>
+                    <div class="statisitcal-content  ">
+                        <div class="statisitcal-item">
+                            <div class="statisitcal-chu">
+                                 <div class="statisitcal-chu-item">
+                                    <span>0 </span>
+                                    <p>Nhân Viên</p>
+                                 </div>
+                                 
+                                <i class='bx bxs-user'></i>
+                            </div>
+                             
+                            <div class="add-staff-item white infor-staff">
+                                <p>xem</p>
+                                <i class='bx bxs-right-arrow-circle'></i>
+                            </div>
+                        </div>
+                        <div class="statisitcal-item xanh">
+                            <div class="statisitcal-chu">
+                                 <div class="statisitcal-chu-item">
+                                    <span>0 </span>
+                                    <p>Phong Ban</p>
+                                 </div>
+                                 
+                                <i class='bx bxs-user'></i>
+                            </div>
+                             
+                            <div class="add-staff-item xanh ">
+                                <p>xem</p>
+                                <i class='bx bxs-right-arrow-circle'></i>
+                            </div>
+                        </div>
+                        <div class="statisitcal-item vang ">
+                            <div class="statisitcal-chu">
+                                 <div class="statisitcal-chu-item">
+                                    <span>0 </span>
+                                    <p>Đang Làm</p>
+                                 </div>
+                                 
+                                <i class='bx bxs-user'></i>
+                            </div>
+                             
+                            <div class="add-staff-item vang">
+                                <p>xem</p>
+                                <i class='bx bxs-right-arrow-circle'></i>
+                            </div>
+                        </div>
+                        <div class="statisitcal-item xanhlam">
+                            <div class="statisitcal-chu">
+                                 <div class="statisitcal-chu-item">
+                                    <span>0 </span>
+                                    <p>Nghi Việc</p>
+                                 </div>
+                                 
+                                <i class='bx bxs-user'></i>
+                            </div>
+                             
+                            <div class="add-staff-item xanhlam">
+                                <p>xem</p>
+                                <i class='bx bxs-right-arrow-circle'></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="board-Staff move">
+                        <h3>Thông Tinh Nhân Viên</h3>
+                        <form action="">
+                            <div class="board-Staff-item">  
+                                <span>Họ và tên</span>
+                                <input type="text" id="fullname">
+                                <small > </small> <br>
+                            </div>
+                            <div class="board-Staff-item">
+                                <span>Email</span>
+                                <input type="email" id="email">
+                                <small for=""> </small> <br>
+                            </div>
+                            <div class="board-Staff-item">
+                                <span>số điện thoại</span>
+                                <input type="text" id="sdt">
+                                <small for=""> </small> <br>
+                            </div>
+                            <div class="board-Staff-item">
+                                <span>Địa chỉ</span>
+                                <input type="text" id="address">
+                                <small > </small> <br>
+                            </div>
+                             
+                            <div class="board-Staff-item">
+                                <span>So CMND</span>
+                                <input type="text" id="cmnd">
+                                <small> </small> <br>
+                            </div>
+                            <div class="board-Staff-item  ">
+                                <span>Tinh Trang</span>
+                            <input type="radio" name="word" id="job" value="1">Đang Làm
+                            <input type="radio" name="word" id="nojob" class="check-word" value="2">Nghỉ Việc
+                            <small> </small> <br>
+                            </div>
+                            
+                            <div class="board-Staff-item ">
+                                <span>Giới Tính</span>
+                            <input type="radio"   name="gender" id="male" value="Nam">Nam
+                            <input type="radio" name="gender" id="famale" class="check-seed" value="Nu">Nu 
+                            <small> </small> <br>
+                            </div>
+                            <div class="board-Staff-item  ">
+                                <input id="index" type="hidden">
+                            </div>
+                            <button id="submit-save" class="add-submit" type="submit">Lưu lại</button>
+                            <button id="submit-update" style="display:none">update</button>
+                        </form>
+                         
+                    </div>
+                    <table  width="100%" id="table-info" class="infor-Member move">
+                           <!-- <tr>   
+                            <th>Ho Va Ten</th>
+                            <th>Dia Chi Email </th>
+                            <th>So dien Thoai</th>
+                            <th>dia Chi</th>
+                            <th>So CMND</th>
+                            <th>Tinh Trang</th>
+                            <th>gioi tinh</th>
+                            </tr> -->
+                            <!-- <tr>
+                                <td>tran duy duc</td>
+                                <td>tranduc@gmail.com</td>
+                                <td>098923323</td>
+                                <td>vb hai phong</td>
+                                <td>48384090384028502</td>
+                                <td class="green">nghi viec</td>
+                                <td>nam</td>
+                            </tr> -->
+                              
+                    </table>
+                    <table  width="100%" class="edit-staff move">
+                    </table>
+                </div>
+             </div>
+        </div>
+         
+         <script src="./index.js"></script>
+    </header>
+</body>
+</html>

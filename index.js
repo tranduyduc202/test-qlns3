@@ -12,6 +12,7 @@ var form=document.querySelector('form')
 var checkSeeds=document.querySelector('.check-seed')
 var checkWords=document.querySelector('.check-word')
 //them nhan vien
+
 addStaffMove.addEventListener('click',function(){
       email.value=' ',fullname.value='',sdt.value='',cmnd.value='',address.value='',
       submitUpdate.style.display="none";
@@ -24,7 +25,22 @@ addStaffMove.addEventListener('click',function(){
 
 
 })
+var addStaffMoves=document.querySelectorAll('.add-staff-item');
 
+     addStaffMoves.forEach(function(stt){
+      addStaffMoves[0].addEventListener('click',function(){
+         boardStaff.classList.toggle('move')
+      })
+      addStaffMoves[1].addEventListener('click',function(){
+         editStaff.classList.toggle('move')
+      })
+
+      stt.addEventListener('click',function(){
+         boardStaff.classList.add('move')
+         editStaff.classList.add('move')
+      })
+     })
+     
  addSubmit.addEventListener('click',function(){
       // boardStaff.classList.add('move')
       // tableInfo.classList.remove('move')
@@ -175,12 +191,14 @@ addStaffMove.addEventListener('click',function(){
             email.value=' ',fullname.value='',sdt.value='',cmnd.value='',address.value=''
            
             console.log(Staffs) 
+            TestStaff()
        }
        
  })
   
 
  function listMember(){
+       
       var inforMember=document.querySelector('.infor-Member')
       var trs=`
       <tr>   
@@ -204,7 +222,7 @@ addStaffMove.addEventListener('click',function(){
       <th>hanh dong</th>
       </tr>`;  
       let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
-      console.log(listStaffs)
+     
       
       listStaffs.map(function(add,stt){
             trs+=`
@@ -237,17 +255,18 @@ addStaffMove.addEventListener('click',function(){
             <td>${add.gender}</td>
             <td>
             <a href="#" onclick='SuaStaff(${staffStt})' >Edit</a> | <a href="#" onclick='DeleteStaff(${staffStt})'>Xoa</a>
-
+            
           </td>
             </tr>`
             
              
-      console.log(stt++)
+     
       totalSraffs(total)
        })
        inforMember.innerHTML=trs;
 
        editStaff.innerHTML=edits;
+       TestStaff();
       }
      
        
@@ -304,6 +323,7 @@ addStaffMove.addEventListener('click',function(){
       localStorage.setItem('list-staffs',JSON.stringify(listStaffs))
       listMember()
             console.log(staffStt)
+            TestStaff()
 }
    //sua nv
    function SuaStaff(staffStt){
@@ -338,7 +358,7 @@ addStaffMove.addEventListener('click',function(){
 
       console.log(listStaffs[staffStt])
       
-       
+      TestStaff()
    }
    var submitUpdate=document.querySelector('#submit-update');
    submitUpdate.addEventListener('click',function(e){
@@ -379,8 +399,11 @@ function totalSraffs(total){
 //load trang web
    var headerTrangChu=document.querySelector('.home-page')
    headerTrangChu.addEventListener('click',function(){
-      location.reload();
+       reloads()
    })
+   function reloads(){
+      location.reload();
+   }
    //quan ly luong
    var wagelist=document.querySelector('.wage-list')
    var tableSalary=document.querySelector('.table-salary')
@@ -388,7 +411,249 @@ function totalSraffs(total){
    var arrowRight=document.querySelector('.wage-arrow')
    var arrowRight1=document.querySelector('.wage-arrow1')
    wagelist.addEventListener('click',function(){
+      listWage()
       tableSalary.classList.toggle('move')
       arrowRight.classList.toggle('move')
       arrowRight1.classList.toggle('move')
    })
+   //quan ly cong tac
+   var menuWord=document.querySelector('.menu-word');
+   var menuIconLeft=document.querySelector('.menu-icon-left')
+   var menuIconBottom=document.querySelector('.menu-icon-bottom')  
+   var menuWordList=document.querySelector('.menu-word-list')
+    menuWord.addEventListener('click',function(){
+      menuWordList.classList.toggle('move')
+      menuIconLeft.classList.toggle('move')
+      menuIconBottom.classList.toggle('move')
+   })
+   //quan ly nhan vien
+   var staffName=document.querySelector('.staff-name');
+   var staffItem=document.querySelector('.staff-item')
+   var arrowRight2=document.querySelector('.wage-arrow2')
+   var arrowRight3=document.querySelector('.wage-arrow3')
+   staffName.addEventListener('click',function(e){
+      staffItem.classList.toggle('move')
+      arrowRight2.classList.toggle('move')
+      arrowRight3.classList.toggle('move')
+      
+   })
+   //menu nhom nhan vien
+   var menuStaffGroupLeft=document.querySelector('.menu-Staff-group-left')
+   var menuStaffGroupBottom=document.querySelector('.menu-Staff-group-bottom')
+   var menuStaffGroup=document.querySelector('.menu-Staff-group')
+   var menuStaffGroupList=document.querySelector('.menu-Staff-group-list')
+   menuStaffGroup.addEventListener('click',function(e){
+      menuStaffGroupList.classList.toggle('move')
+      menuStaffGroupLeft.classList.toggle('move')
+      menuStaffGroupBottom.classList.toggle('move')
+      
+   })
+   //content
+   var content=document.querySelector('.content')
+   content.addEventListener('click',function(){
+      menuAccount.classList.add('move')
+   })
+   //menu tai khoan nhan vien
+   var menuAccountList=document.querySelector('.menu-account-list')
+   var menuAccountBottom=document.querySelector('.menu-account-bottom')
+   var menuAccountLeft=document.querySelector('.menu-account-left')
+   var menuAccount=document.querySelector('.menu-account ')
+   menuAccountList.addEventListener('click',function(e){
+      menuAccount.classList.toggle('move')
+      menuAccountBottom.classList.toggle('move')
+      menuAccountLeft.classList.toggle('move')
+      
+   })
+   //quan ly luong-ds ten nv
+   listWage()
+   var abc=document.querySelector('.list-name-nv')
+   
+   function listWage(){
+      let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
+       var Listnames=` <option value="--chon nhan vien--">--chon nhan vien--</option>`
+      var abc=document.querySelector('#list-name-nv-list')
+      
+      listStaffs.forEach(function(data){
+          
+           Listnames+=`<option value="${data.fullname}">${data.fullname}</option>`
+           
+      })
+      abc.innerHTML=Listnames
+      console.log(abc.value)
+   }
+   var tableSalaryTable=document.querySelector('.table-salary-table')
+   var tableWage=document.querySelector('.table-wage')
+       tableSalaryTable.addEventListener('click',function(e){
+         console.log('ducdz')
+       tableWage.classList.toggle('move1')
+       e.stopPropagation()
+   })
+   var menuContentLy=document.querySelectorAll('.menu-content li')
+//    menuContentLy[].addEventListener('click',function(){
+//       tableWage.classList.add('move')
+//    })
+          
+           menuContentLy.forEach(function(stt){
+               // menuContentLy[4].addEventListener('click',function(){
+               //    tableWage.classList.remove('move')
+               // })
+             
+               stt.addEventListener('click',function(e){
+                  tableWage.classList.add('move')
+                  boardStaff.classList.add('move')
+                  editStaff.classList.add('move')
+                  tableInfo.classList.add('move')
+                 
+                  statisitcalContent.classList.remove('move')
+                    document.querySelector('.menu-content li.move').classList.remove('move')
+                   stt.classList.add('move')
+                   tableWage.classList.add('move1')
+                  //  staffItem.classList.add('move')
+               })
+              
+           })
+     var payrollList=document.querySelector('.payroll-list');
+     var btnWage=document.querySelector('.btn-wage')
+     var payroll=document.querySelector('.payroll')
+     btnWage.addEventListener('click',function(){
+      payrollList.classList.remove('move')
+     })
+     payrollList.addEventListener('click',function(){
+      payrollList.classList.add('move')
+     })
+     payroll.addEventListener('click',function(e){
+       e.stopPropagation()
+     })
+      
+     //menu--nhan vien--them nhanvien
+     var menuAddStaff=document.querySelector('.menu-addStaff');
+     menuAddStaff.addEventListener('click',function(e){
+      boardStaff.classList.toggle('move')
+      editStaff.classList.add('move')
+      tableInfo.classList.add('move')
+      statisitcalContent.classList.add('move')
+      e.stopPropagation()
+     })
+     //menu--nhan vien--sua xoa nhanvien
+     var menuEditStaff=document.querySelector('.menu-EditStaff')
+     menuEditStaff.addEventListener('click',function(e){
+      editStaff.classList.remove('move')
+      boardStaff.classList.add('move')
+      tableInfo.classList.add('move')
+      statisitcalContent.classList.add('move')
+      e.stopPropagation()
+     })
+     //menu--nhan vien--thong tin nhanvien
+     
+     var menuInfoStaff=document.querySelector('.menu-InfoStaff')
+     menuInfoStaff.addEventListener('click',function(e){
+      tableInfo.classList.remove('move')
+      boardStaff.classList.add('move')
+      editStaff.classList.add('move')
+      statisitcalContent.classList.add('move')
+      e.stopPropagation()
+     })
+     
+
+     //menu-hieu ung 
+     var menuContent=document.querySelector('.menu-content');
+     var menuLiStaff=document.querySelector('.menu-li-Staff')
+     var wageLi=document.querySelector('.wage')
+     menuLiStaff.addEventListener('click',function(e){
+        e.stopPropagation()
+     })
+
+     wageLi.addEventListener('click',function(e){
+        e.stopPropagation()
+     })
+     menuContent.addEventListener('click',function(){
+      staffItem.classList.add('move')
+      tableSalary.classList.add('move')
+     })
+     //bang luong da tinh
+     var listNameNvList=document.querySelector('#list-name-nv-list')
+     var wordDay=document.querySelector('#word-day')
+     var allowance=document.querySelector('#allowance')
+     var advanceMoney=document.querySelector('#advance-money')
+     var dates=document.querySelector('#date')
+     var tableWageAdmin=document.querySelector('#table-wage-admin')
+     var btnWage=document.querySelector('.btn-wage');
+     var tableWageCode=document.querySelector('#table-wage-code')
+     var payrollTr=document.querySelector('.payrollTr')
+     btnWage.addEventListener('click',function(){
+      totalTableWage();
+      var TableWages=[]
+      TableWages.push({
+      tableWageCode:tableWageCode.value,
+      listNameNvList:listNameNvList.value,
+      wordDay:wordDay.value,
+      allowance:allowance.value,
+      advanceMoney:advanceMoney.value,
+      dates:dates.value,
+      tableWageAdmin:tableWageAdmin.value,
+     })
+     console.log(TableWages)
+     TableWages.forEach(function(stt){
+      payrollTr.innerHTML=`
+                           <td>${stt.tableWageCode}</td>
+                           <td>${stt.listNameNvList}</td>
+                           <td>${stt.wordDay}</td>
+                           <td>${stt.allowance}</td>
+                           <td>${stt.advanceMoney}</td>
+                           <td>${stt.dates}</td>
+                           <td>${stt.tableWageAdmin}</td>`
+     })
+     })
+     // bang luong da tinh
+   function totalTableWage(){
+      var totalTableWage=[]
+      var basicSalary=4400000;
+      var totalMoney=document.querySelector('.total-money')
+      totalTableWage.push({
+      wordDay:wordDay.value,
+      allowance:allowance.value,
+      advanceMoney:advanceMoney.value,
+     })
+     totalTableWage.forEach(function(stt){
+          console.log(stt)
+         var totalIncome= basicSalary/26*stt.wordDay-stt.advanceMoney*1000+stt.allowance*1000;
+         var qwert=totalIncome.toFixed(0);
+         const VND = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND',
+          });
+          totalMoney.innerHTML=`Tổng thu nhập:  + ${VND.format(qwert)}`
+          console.log();
+         
+     })
+   }
+   
+  // tao so luong nv nghi viec-lam viec
+     function TestStaff(){
+      let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
+      let SttResign=0;
+      let SttWord=0;
+      var IndexWord=document.querySelector('.IndexWord')
+      var indexResign=document.querySelector('.indexResign')
+      listStaffs.forEach(function(indexs,stt){
+         if(indexs.kiemtrajob=="làm việc"){
+            SttResign++;
+            // console.log(listStaffs[SttResign])
+         }else if(indexs.kiemtrajob=="nghỉ việc"){
+            SttWord++;
+            console.log(listStaffs[SttWord])
+         }
+          
+         //  console.log(listStaffs[SttResign])
+          IndexWord.innerHTML=SttResign;
+          indexResign.innerHTML=SttWord;
+      })
+     }
+   
+     //tao cong tac
+     var menuWordList=document.querySelector('.menu-word-list')
+     var addWord=document.querySelector('#add-word');
+     var tableWordBussinessList=document.querySelector('.table-word-bussiness-list')
+
+
+      

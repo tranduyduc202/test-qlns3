@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body onload="listMember()">
     <header>
@@ -19,31 +20,78 @@
                 <h3>QLNS VMU</h3>
             </div>
              <ul class="menu-content">
-                <li>+Thêm Nhân Viên</li>
+                <li class="move">+Cơ sở dữ liệu</li>
                 <li><i class='bx bxs-bar-chart-alt-2'></i>
-                  <span>Thêm nhân viên</span> </li>
-                <li>Chấm Công</li>
-                <li><i class='bx bxs-user'></i> Người Dùng <i class='bx bxs-chevron-left arrow-right'></i></li>
-                <li class="wage"> 
-                    <div class="wage-list">
-                        <i class='bx bxs-down-arrow-circle'></i> Quản lý Lương <i class='bx bxs-chevron-left arrow-right wage-arrow'></i>
-                        <i class='bx bx-chevron-down arrow-right wage-arrow1 move'></i>
+                  <span class="menu-scroll">Tổng Quan</span> </li>
+                <!-- <li>Chấm Công</li> -->
+                <li class="menu-li-Staff">
+                    <div class="staff-name menu-scroll">
+                     <i class="fa-solid fa-users-line"></i>  Nhân Viên <i class='bx bxs-chevron-left wage-arrow2'></i>
+                        <i class='bx bx-chevron-down arrow-right wage-arrow3 move'></i> <br>
                     </div>
-                        <div>ducdz</div>
-                        <div class="table-salary move">
-                            <p><input type="radio" name="wage"> <small>Bang tinh luong</small> <br></p>
-                             
-                             <p><input type="radio" name="wage"> <span class="salary">Tinh luong</span></p>
-                             
-                        </div>
-                               
+                    <div class="staff-item move">
+                        <p class="menu-addStaff"><input type="radio" name="wage"> <span>Thêm Nhân Viên</span> <br></p>
+                         
+                         <p class="menu-EditStaff"><input type="radio" name="wage"> <span class="salary">Sửa xóa nhân viên</span></p>
+                         <p class="menu-InfoStaff"><input type="radio" name="wage"> <span>thông tin Nhân viên</span> <br></p>
+                         <p ><input type="radio" name="wage"> <span>Chức vụ</span> <br></p>
+                         <p ><input type="radio" name="wage"> <span>Trình độ</span> <br></p>
+                    </div>
+
                 </li>
-                <li class="li6">Quản Lý</li>
-                <li><i class='bx bx-image'></i> Quản lý ảnh</li>
-                <li><i class='bx bxs-user-rectangle'></i> Nhân Viên <i class='bx bxs-chevron-left arrow-right'></i></li>
-                <li>Danh mục <i class='bx bxs-chevron-left arrow-right '></i></li>
+                <li class="wage"> 
+                    <div class="wage-list menu-scroll">
+                        <i class='bx bx-money'></i> Quản lý Lương <i class='bx bxs-chevron-left arrow-right wage-arrow'></i>
+                        <i class='bx bx-chevron-down arrow-right wage-arrow1 move'></i>
+                    </div>   
+                    <div class="table-salary move ">
+                        <p><input type="radio" name="wage"> <label>Bang tinh luong</label> <br></p>
+                         
+                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Tinh luong</span></p>
+                         
+                    </div>       
+                </li>
+                 
+                <li class="li6 menu-scroll">Quản Lý</li>
+                <li>
+                    <div class="menu-word">
+                        <i class="fa-solid fa-plane"></i> Quản lý công tác <i class='bx bxs-chevron-left arrow-right menu-icon-left'></i>
+                        <i class='bx bx-chevron-down arrow-right menu-icon-bottom move'></i>
+                    </div>   
+                     
+                    <div class="menu-word-list move">
+                        <p id="add-word"><input type="radio" name="wage" > <label>Tạo công tác</label> <br></p>     
+                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Danh sách công tác</span></p>
+                         
+                    </div>    
+                    
+                </li>
+               
+
+                <li>
+                    <div class="menu-Staff-group">
+                        <i class="fa-solid fa-people-roof"></i>Nhóm Nhân Viên <i class='bx bxs-chevron-left arrow-right menu-Staff-group-left'></i>
+                        <i class='bx bx-chevron-down arrow-right menu-Staff-group-bottom move'></i>
+                    </div>
+                    <div class="menu-Staff-group-list move">
+                        <p><input type="radio" name="wage"> <label>Tạo công tác</label> <br></p>     
+                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Danh sách công tác</span></p>
+                    </div>   
+                </li>
+                <li>
+                    <div class="menu-account-list">
+                        <i class='bx bxs-user'></i>Tài Khoản <i class='bx bxs-chevron-left arrow-right menu-account-bottom'></i>
+                        <i class='bx bx-chevron-down arrow-right menu-account-left move'></i>
+                    </div>
+                     
+                    <div class="menu-account move">
+                        <p><input type="radio" name="wage"> <label><a href="index.html">Đăng nhập</a></label> <br></p>     
+                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary"><a href="signup.html">Đăng ký tài khoản</a></span></p>
+                    </div>  
+                </li>
              </ul>
         </div>
+    </header>
         <div class="content">
             <div class="content-top">
                 <div class="header-top">
@@ -92,7 +140,7 @@
                     </div>
                     <div class="add-staff xanh">
                         <span>Tim kiếm NV</span>
-                        <div class="add-staff-item xanh">
+                        <div class="add-staff-item xanh add-staff-xanh">
                             <p>xem</p>
                             <i class='bx bxs-right-arrow-circle'></i>
                         </div>
@@ -110,7 +158,7 @@
                                     <p>Nhân Viên</p>
                                  </div>
                                  
-                                <i class='bx bxs-user'></i>
+                                 <i class="fa-solid fa-users-line"></i>
                             </div>
                              
                             <div class="add-staff-item white infor-staff">
@@ -136,7 +184,7 @@
                         <div class="statisitcal-item vang ">
                             <div class="statisitcal-chu">
                                  <div class="statisitcal-chu-item">
-                                    <span>0 </span>
+                                    <span class="IndexWord">0 </span>
                                     <p>Đang Làm</p>
                                  </div>
                                  
@@ -151,7 +199,7 @@
                         <div class="statisitcal-item xanhlam">
                             <div class="statisitcal-chu">
                                  <div class="statisitcal-chu-item">
-                                    <span>0 </span>
+                                    <span class="indexResign">0 </span>
                                     <p>Nghi Việc</p>
                                  </div>
                                  
@@ -239,9 +287,109 @@
                     </table>
                 </div>
              </div>
+             <!-- quan ly luong -->
+                 <div class="table-wage move1">
+                    <ul class="table-wage-list">
+
+                        <li><h3>Tính Lương Nhân Viên</h3></li>
+                        <li><p>Mã Lương</p><input  type="text" id="table-wage-code" value="6868" placeholder="6868"></li>
+                        <li class="list-name-nv">
+                            <p>Nhân Viên</p>
+                            <select name="" id="list-name-nv-list">
+                                <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <p>Số Ngày Công</p>
+                            <input type="number" id="word-day" placeholder="Nhap so ngay cong"  min="1" max="31">
+                        </li>
+                        <li>
+                            <p>Phụ Cấp(phụ cấp chức vụ)</p>
+                            <input type="text" id="allowance" placeholder="chọn phụ cấp (1000vnđ = 1)">
+                        </li>
+                        <li>
+                            <p>Tạm Ứng</p>
+                            <input type="namber" id="advance-money" placeholder="(1000vnđ = 1)">
+                        </li>
+                        <li>
+                            <p>Ngày tháng</p>
+                            <input type="date" id="date">
+                        </li>
+                        <li> <p>Người Tạo</p> <input type="text" id="table-wage-admin" value="admin" placeholder="admin"></li>
+                        <button class="btn-wage">Tính Lương Nhân Viên</button>
+                    </ul>
+                 </div>
+                 <!-- bang tinh cong tac -->
+                 <div class="table-word-bussiness move">
+                    <ul class="table-word-bussiness-list">
+
+                        <li><h3>Công Tác</h3></li>
+                        <li><p>mã công tác</p><input  type="text" id="table-word-bussiness-code" value="6868" placeholder="6868"></li>
+                        <li class="table-word-bussiness-nv">
+                            <p>Chọn Nhân Viên</p>
+                            <select name="" id="table-word-bussiness-nv-list">
+                                <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <p>Ngày Bắt đầu</p>
+                            <input type="date" id="date">
+                        </li>
+                        <li>
+                            <p>Ngày Kết Thúc</p>
+                            <input type="date" id="date">
+                        </li>       
+                        <li>
+                            <p>Địa Điểm công tác</p>
+                            <input type="text" id="allowance" placeholder="chọn phụ cấp">
+                        </li>
+                        <li>
+                            <p>Mục Đích Công Tác</p>
+                            <input type="namber" id="advance-money" placeholder="0">
+                        </li>
+                       
+                        <li> <p>Người Tạo</p> <input type="text" id="table-wage-admin" value="admin" placeholder="admin"></li>
+                        <button class="btn-wage">Luu thong tin</button>
+                    </ul>
+                </div>
+                 <!-- bang da tinh luong -->
+            </div>
+            <div class="payroll-list move">
+                <div class="payroll move">
+                    <table >
+                        <tr style="background-color:#4392e2;">
+                            <th>mã lương</th>
+                            <th>Nhân Viên</th>
+                            <th>Số Ngày Công</th>
+                            <th>Phụ Cấp</th>
+                            <th>Tạm Ứng</th>
+                            <th>Ngày Tháng</th>
+                            <th>Người tạo</th>
+                        </tr>
+                        <tr class="payrollTr">
+                            <td>Chưa nhập dữ liệu :)))</td>
+                            <td>Chưa nhập dữ liệu :)))</td>
+                            <td>Chưa nhập dữ liệu :)))</td>
+                            <td>Chưa nhập dữ liệu :)))</td>
+                            <td>Chưa nhập dữ liệu :)))</td>
+                            <td>Chưa nhập dữ liệu :)))</td>         
+                            <td>Chưa nhập dữ liệu :)))</td>
+                        </tr>
+    
+                    </table>
+                    <div class="total-money">tong thu nhap:</div>
+            </div>
+             
+            </div>
+            <div class="loatAll move">
+        
+                <div class="loat">
+            
+                </div>
         </div>
-         
          <script src="./index.js"></script>
-    </header>
+     
 </body>
 </html>

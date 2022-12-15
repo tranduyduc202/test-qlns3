@@ -23,14 +23,14 @@ body{
     top: 0;
     right: 0;
     bottom: 0;
-    width: 200px;
+    width: 18%;
     left: 0;
-    background-color: #333;
+    background-color: rgba(0,0,0,0.8);
     margin: 0px;
 }
 .content{
-    width:83%;
-    margin-left: 200px;
+    width: 82%;
+    margin-left: 18%;
 }
 .header-top{
     display: flex;
@@ -94,7 +94,7 @@ body{
    margin: 0px auto;
 }
 .content-body{
-    height: 100vh;
+    max-height: 100vh;
 }
 .content-add{
     display: flex;
@@ -239,24 +239,81 @@ li{
     list-style: none;
 }
 .menu-content{
-    padding: 10px;
+    padding: 10px 0px;
 }
 .menu-content li{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #d7d7d7;
     font-size: 13px;
+    padding: 3px 10px;
+}
+.menu-content li.move{
+    border-left: 2px solid #044a91;
+    background: rgba(0,0,0,0.2);
+}
+.menu-content li:nth-child(1){
+    color: #878787;
+    font-size: 16px;
+    font-weight: 700;
 }
 .menu-content li:nth-child(4){
-     display: flex;
+     margin-bottom: 0px;
      align-items: center;
      position: relative;
-     
+    
+}
+.menu-content li:nth-child(4) .staff-name{
+     width: 100%;
+}
+.menu-account-bottom.move{
+     display: none;
+}
+.menu-account-left.move{
+    display: none;
+}
+.menu-account.move{
+    display: none;
+}
+.menu-account{
+    padding: 5px 0px 0px 5px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.menu-account p a{
+    color: #fff;
+}
+.staff-item{
+    padding: 5px 0px 0px 5px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 5px;
+    cursor: pointer
+    
+}
+.staff-item.move{
+    display: none;
+}
+.staff-item p input{
+    width: 9px;
+    border: none;
+    padding-right: 5px;
+    margin-right: 5px
+}
+.staff-item p span{
+    font-size: 11px;
+}
+.staff-item p{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
 }
 .menu-content li:nth-child(5){
     
     align-items: center;
     position: relative;
-    
+    margin-bottom: 0px;
 }
 .wage:checked ~ .table-salary{
      display: block;
@@ -264,7 +321,9 @@ li{
 .table-salary{
      padding: 5px 0px 0px 5px;
     font-size: 12px;
-     
+     color: #fff;
+     margin-bottom: 5px;
+     cursor: pointer;
  }
  .table-salary.move{
      display: none;
@@ -296,18 +355,81 @@ li{
     display: flex;
     align-items: center;
  }
-.menu-content li:nth-child(6){
+.menu-content li:nth-child(5){
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 20px;
+    margin: 10px 0px;
     font-size: 20px;
 }
 .menu-content li:nth-child(7){
+   
+    position: relative;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.menu-icon-bottom.move{
+    display: none;
+}
+.menu-icon-bottom{
+    font-size: 16px;
+}
+.menu-icon-left.move{
+    display: none;
+}
+.menu-word-list.move{
+    display: none;
+}
+.menu-word{
     display: flex;
     align-items: center;
-    position: relative;
-    
+}
+.menu-word-list{
+    padding: 5px 0px 0px 5px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.menu-content li input[type="radio"]{
+    width: 9px;
+    border: none;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+.menu-content li p{
+    display: flex;
+    align-items: center;
+    padding: 3px 0px 2px 5px
+}
+.menu-Staff-group i{
+   font-size: 16px;
+}
+.menu-word-list p{
+    display: flex;
+    align-items: center;
+    padding: 3px 0px 2px 5px;
+}
+/* menu-taff-group */
+.menu-Staff-group{
+    display: flex;
+    align-items: center;
+}
+.menu-Staff-group-list{
+    padding: 5px 0px 0px 5px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.menu-Staff-group-list.move{
+    display: none;
+}
+.menu-Staff-group-left.move{
+    display: none;
+}
+.menu-Staff-group-bottom.move{
+    display: none;
 }
 .menu-content li i{
     margin-right: 5px;
@@ -320,6 +442,19 @@ li{
    position: absolute;
    right: 5px;
 }
+.menu-content li .wage-arrow2{
+    position: absolute;
+    right: 5px;
+ }
+ .wage-arrow3{
+    font-size: 14px;
+ }
+ .wage-arrow3.move{
+    display: none;
+ }
+ .wage-arrow2.move{
+    display: none;
+ }
 .board-Staff{
     margin-top: 20px;
     width: 550px;
@@ -361,14 +496,15 @@ li{
     font-size: 13px;
 }
 .board-Staff button{
-    padding: 7px 20px;
+    background: #0060c6;
+    padding: 9px 28px;
     border: none;
-    border-radius: 9px;
-    background-color: rgb(231, 220, 220)  ;
+    border-radius: 16px;
     cursor: pointer;
+    color: #ccc;
 }
 .board-Staff button:hover{
-    background-color: #9b9696;
+    background-color: #03478f;
 }
 .board-Staff.move{
     display: none;
@@ -426,6 +562,7 @@ table{
  .edit-staff td{
     padding: 15px 8px;
     font-size: 13px;
+    font-weight: 600;
  }
  .edit-staff th{
     padding: 15px 8px;
@@ -434,6 +571,7 @@ table{
     margin-top: 20px;
     box-shadow: 0 0 1px black;
     padding: 15PX 0PX;
+    text-align: center;
  }
  .home-page{
     cursor: pointer;
@@ -445,5 +583,314 @@ table{
  .managae-salary{
     position: relative;
  }
-  
-  
+  /* quan ly luong */
+  .table-wage{
+    position: fixed;
+    top: 120px;
+    right: 0;
+    left: 18%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 100;
+    overflow-y: scroll;
+    padding: 10px;
+}
+ .table-wage{
+
+ }
+.table-wage-list{
+    padding: 15px;
+    background-color: #fff;
+    border-top: 3px solid #0063c6;
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0 0 2px #333;
+}
+.table-wage-list li{
+    padding: 5px 0px;
+}
+.table-wage-list li:nth-child(1){
+    border-bottom: 1px solid #ccc;
+}
+.table-wage-list li:nth-child(2) input{
+   background-color: #ccc;
+}
+.table-wage-list li:nth-child(8) input{
+    background-color: #ccc;
+ }
+.table-wage-list li input{
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 2px #333;
+    border-radius: 3px;
+    outline: none;
+    padding:3px 10px;
+    margin-top: 3px;
+}
+.table-wage-list select{
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 2px #333;
+    border-radius: 3px;
+    outline: none;
+    padding:3px 10px;
+    margin-top: 3px;
+}
+.table-wage-list li p{
+    margin-bottom: 3px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 600;
+}
+.table-wage-list button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #126fcb;
+    color: #fff;
+    cursor: pointer;
+}
+.table-wage-list button:hover{
+    background-color: #034281;
+}
+#list-name-nv-list option{
+    padding: 10px;
+    line-height: 20px;
+}
+#list-name-nv-list{
+    display: block;
+}
+.table-wage.move1{
+   display: none;
+}
+.payroll-list{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0,0, 0.6);
+    z-index: 1000;
+}
+.payroll-list.move{
+    display: none;
+}
+.payroll{
+    position: absolute;
+    background-color: #fff;
+   
+    width: 900px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #333;
+    overflow: hidden;
+     
+}
+.payroll table{
+   width: 100%;
+   
+    padding: 10px;
+   
+}
+.payroll table tr th{
+    padding:20px 10px;
+    boder:1px solid #333
+}
+.payroll table tr td{
+    padding: 15px 14px;
+    boder:1px solid #333;
+    margin-right: 5px;
+    text-align: center;
+}
+.payroll table tr{
+   
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #333;
+       
+}
+.total-money{
+    padding: 15px;
+    text-align: right;
+}
+@keyframes aoma{
+    0%{
+       
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+        
+    }
+    75%{
+        opacity: 0.8;
+       
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
+/* tao bang cong tac */
+.table-word-bussiness{
+    position: fixed;
+    top: 120px;
+    right: 0;
+    left: 18%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+    overflow-y: scroll;
+    padding: 10px;
+}
+.table-word-bussiness-list{
+    padding: 15px;
+    background-color: #fff;
+    border-top: 3px solid #0063c6;
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0 0 2px #333;
+}
+.table-word-bussiness-list li{
+    padding: 5px 0px
+}
+.table-word-bussiness-list li p{
+    margin-bottom: 3px;
+    font-size: 15px;
+    color: #333;
+    font-weight:600;
+}
+.table-word-bussiness-list li input{
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 1px #333;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px 10px;
+    margin-top: 3px;
+}
+.table-word-bussiness-list li select{
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 1px #333;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px 10px;
+    margin-top: 3px
+}
+.table-word-bussiness-list li:nth-child(2) input{
+    background-color: #ccc;
+}
+.table-word-bussiness-list button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #126fcb;
+    color: #fff;
+    cursor: pointer;
+}
+.table-word-bussiness.move{
+    display: none;
+}
+.green{
+    background-color: #2d8cf1;
+}
+.loatAll{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(129, 120, 120, 0.901);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   z-index: 99;
+   animation: changeColor linear 2s infinite;
+}
+@keyframes changeColor{
+   0%{
+    filter:hue-rotate(0deg);
+   }
+   100%{
+    filter:hue-rotate(360deg);
+   }
+}
+
+.loat{
+   width:100px;
+   height: 100px; 
+   
+   border-radius: 50%;
+   border: 5px solid rgb(82, 157, 233);
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   position:relative;
+    animation: xoay 1s ease infinite;
+
+   
+}
+ 
+.loat::before{
+    content: "";
+    position: absolute;
+    top:30px;
+    left:30px;
+    right: 30px;
+     bottom: 30px;
+    border-radius: 50%;
+    top:15px;
+    left:15px;
+    right: 15px;
+     bottom: 15px;
+   border: 5px solid rgb(82, 157, 233);
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   animation: xoay3 1s infinite;
+    
+}
+.loat::after{
+    content: "";
+    position: absolute;
+    top:30px;
+    left:30px;
+    right: 30px;
+     bottom: 30px;
+    
+    border-radius: 50%;
+   border: 5px solid rgb(82, 157, 233);
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   animation: xoay2 .1s infinite;
+    
+}
+.loatAll.move{
+    display: none;
+}
+@keyframes xoay{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes xoay1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes xoay3{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-720deg);
+    }
+}
+/* giang vien giang vien cao cap truong phong pho phong */

@@ -117,12 +117,6 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
      var gender=" ";
  var genderNam=document.querySelector('.board-Staff-item #male')
  var genderNu=document.querySelector('.board-Staff-item #famale')
-      //   if(genderNam.checked){
-      //          gender=`male`
-      //   }else{
-      //       gender="famale"
-      //       console.log('123')
-      //   }
         function checkSeed(checkSeeds){
             if(genderNu.checked || genderNam.checked){
                    showSuccess(checkSeeds)
@@ -173,7 +167,7 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
             boardStaff.classList.add('move')
             tableInfo.classList.remove('move')
                  let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
-                  listStaffs.push({
+                var abc={
                   email:email.value,
                   fullname :fullname.value,
                   sdt:sdt.value,
@@ -182,23 +176,22 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
                   kiemtrajob:kiemtrajob,
                   gender:gender,
                   
-                  })
+                  }
+                 listStaffs.push(abc)
                  
                  localStorage.setItem("list-staffs",JSON.stringify(listStaffs))
-                  
-            //      console.log(listStaffs)
                  listMember()
             email.value=' ',fullname.value='',sdt.value='',cmnd.value='',address.value=''
            
             console.log(Staffs) 
+           
             TestStaff()
+            loading()
        }
        
  })
   
-
  function listMember(){
-       
       var inforMember=document.querySelector('.infor-Member')
       var trs=`
       <tr>   
@@ -222,8 +215,6 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
       <th>hanh dong</th>
       </tr>`;  
       let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
-     
-      
       listStaffs.map(function(add,stt){
             trs+=`
             <tr>
@@ -236,9 +227,6 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
             <td>${add.gender}</td>
             
             </tr>`
-
-      //   inforMember.appendChild(trs)
-      // console.log(stt++)
       })
       listStaffs.map(function(add,stt){
             let staffStt=stt;
@@ -254,36 +242,20 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
             <td class="green">${add.kiemtrajob}</td>
             <td>${add.gender}</td>
             <td>
-            <a href="#" onclick='SuaStaff(${staffStt})' >Edit</a> | <a href="#" onclick='DeleteStaff(${staffStt})'>Xoa</a>
+            <a href="#" class="style-SuaStaff" onclick='SuaStaff(${staffStt})' >Sửa</a> | <a  class="style-DeleteStaff" href="#" onclick='DeleteStaff(${staffStt})'>Xóa</a>
             
           </td>
             </tr>`
-            
-             
-     
       totalSraffs(total)
        })
        inforMember.innerHTML=trs;
 
        editStaff.innerHTML=edits;
        TestStaff();
+      
       }
      
-       
-      
-      // var checkjob=document.querySelector("addinfors")
-      // console.log(checkjob)
-      // if(checkjob.value=='lam viev'){
-      //       tableInfoTR.style.color='#0063c6'
-      //  }else{
-      //       tableInfoTR.style.color='red'
-      //  }
-      // console.log(trs);
- 
- 
 //  var tableInfoTR=document.querySelector('#table-info tr .green')
- 
-
   var Staffs=[];
   Staffs.push({
       email:email.value,
@@ -304,8 +276,7 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
      //click thong ke nhan su
    var statisitcalText=document.querySelector('.statisitcal-text');
    statisitcalText.addEventListener('click',function(){
-      statisitcalContent.classList.toggle('move')
-      editStaff.classList.add('move')
+      reloads()
    })
    //edit nhan vien
    var Timekeeping=document.querySelector('.Timekeeping')
@@ -315,15 +286,17 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
       editStaff.classList.remove('move')
       tableInfo.classList.add('move')
       boardStaff.classList.add('move')
+      loading()
    })
    //xoa nv
    function DeleteStaff(staffStt){
       let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
       listStaffs.splice(staffStt,1);
       localStorage.setItem('list-staffs',JSON.stringify(listStaffs))
-      listMember()
+             listMember()
             console.log(staffStt)
             TestStaff()
+            loading()
 }
    //sua nv
    function SuaStaff(staffStt){
@@ -359,6 +332,7 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
       console.log(listStaffs[staffStt])
       
       TestStaff()
+      loading()
    }
    var submitUpdate=document.querySelector('#submit-update');
    submitUpdate.addEventListener('click',function(e){
@@ -390,6 +364,7 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
          }
          localStorage.setItem("list-staffs",JSON.stringify(listStaffs))
          listMember();
+         loading()
    })
    //tong so nhan vien
 var statisitcalChuItem=document.querySelector('.statisitcal-chu-item span')
@@ -399,7 +374,9 @@ function totalSraffs(total){
 //load trang web
    var headerTrangChu=document.querySelector('.home-page')
    headerTrangChu.addEventListener('click',function(){
+      loading()
        reloads()
+
    })
    function reloads(){
       location.reload();
@@ -448,6 +425,55 @@ function totalSraffs(total){
       menuStaffGroupBottom.classList.toggle('move')
       
    })
+   // them nhom nhan vien
+   var StaffGroupItem=document.querySelector('.Staff-group-item')
+   var tableTaffTeams=document.querySelector('.table-taffTeams ')
+   StaffGroupItem.addEventListener('click',function(e){
+      tableTaffTeams.classList.toggle('move')
+      tableTaffTeamsALL.classList.add('move')
+      e.stopPropagation()
+   })
+   //bang nhom nhan vien
+   var tableTaffTeamsALL=document.querySelector('.table-taffTeamsALL')
+    var btnTableTaffTeams=document.querySelector('.btn-table-taffTeams')
+    var tableTaffTeamsName=document.querySelector('#table-taffTeams-name')
+    var tableTaffTeamsDate=document.querySelector('#table-taffTeams-date')
+    var tableTaffTeamsALLMenu=document.querySelector('.table-taffTeamsALL-menu')
+         btnTableTaffTeams.addEventListener('click',function(){
+            tableTaffTeamsALL.classList.remove('move')
+            var tableTaffTeamsARR=[];
+            tableTaffTeamsARR.push({
+               tableTaffTeamsName:tableTaffTeamsName.value,
+               tableTaffTeamsDate:tableTaffTeamsDate.value,
+            })
+            console.log(tableTaffTeamsARR)
+            tableTaffTeamsARR.forEach(function(stt){
+               console.log(stt)
+               var tableTaffTeamsALLMenu=document.querySelector('.table-taffTeamsALL-menu')
+               let div=document.createElement('div');
+               div.classList.add('table-taffTeamsALL-content')
+               div.innerHTML=`
+                                <div class="table-taffTeamsALL-list">
+                                <div class="table-taffTeamsALL-item">
+                                  <span>${stt.tableTaffTeamsName}</span>
+                                  <p>thông tin</p>
+                                </div>
+                                <i class="fa-solid fa-users-line"></i>
+                            </div>
+                            <div class="table-taffTeamsALL-xoa">
+                                <span>xóa nhóm</span>
+                            </div>
+                           `
+                     tableTaffTeamsALLMenu.appendChild(div)      
+            })
+    
+         })
+         //danh sach nhom
+         var tableAddWord=document.querySelector('.table-add-word')
+         tableAddWord.addEventListener('click',function(e){
+            e.stopPropagation()
+            tableTaffTeamsALL.classList.toggle('move')
+         })
    //content
    var content=document.querySelector('.content')
    content.addEventListener('click',function(){
@@ -472,14 +498,14 @@ function totalSraffs(total){
       let listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
        var Listnames=` <option value="--chon nhan vien--">--chon nhan vien--</option>`
       var abc=document.querySelector('#list-name-nv-list')
-      
+      var abcs=document.querySelector('#list-name-nv-lists')
       listStaffs.forEach(function(data){
           
            Listnames+=`<option value="${data.fullname}">${data.fullname}</option>`
            
       })
       abc.innerHTML=Listnames
-      console.log(abc.value)
+      abcs.innerHTML=Listnames
    }
    var tableSalaryTable=document.querySelector('.table-salary-table')
    var tableWage=document.querySelector('.table-wage')
@@ -488,16 +514,8 @@ function totalSraffs(total){
        tableWage.classList.toggle('move1')
        e.stopPropagation()
    })
-   var menuContentLy=document.querySelectorAll('.menu-content li')
-//    menuContentLy[].addEventListener('click',function(){
-//       tableWage.classList.add('move')
-//    })
-          
+   var menuContentLy=document.querySelectorAll('.menu-content li')     
            menuContentLy.forEach(function(stt){
-               // menuContentLy[4].addEventListener('click',function(){
-               //    tableWage.classList.remove('move')
-               // })
-             
                stt.addEventListener('click',function(e){
                   tableWage.classList.add('move')
                   boardStaff.classList.add('move')
@@ -508,7 +526,6 @@ function totalSraffs(total){
                     document.querySelector('.menu-content li.move').classList.remove('move')
                    stt.classList.add('move')
                    tableWage.classList.add('move1')
-                  //  staffItem.classList.add('move')
                })
               
            })
@@ -517,9 +534,26 @@ function totalSraffs(total){
      var payroll=document.querySelector('.payroll')
      btnWage.addEventListener('click',function(){
       payrollList.classList.remove('move')
+      comeBack.classList.remove('move')
+
      })
+     //menu-bang-cong-tac
+     var btnBussiness=document.querySelector('.btn-bussiness')
+     var menuBusinessList=document.querySelector('.menu-business-list');
+     var menuBusiness=document.querySelector('.menu-business')
+     menuBusinessList.addEventListener('click',function(e){
+       e.stopPropagation();
+     })
+     btnBussiness.addEventListener('click',function(){
+      menuBusiness.classList.remove('move')
+     })
+     menuBusiness.addEventListener('click',function(){
+      menuBusiness.classList.add('move')
+     })
+     //
      payrollList.addEventListener('click',function(){
       payrollList.classList.add('move')
+      comeBack.classList.add('move')
      })
      payroll.addEventListener('click',function(e){
        e.stopPropagation()
@@ -582,17 +616,17 @@ function totalSraffs(total){
      var payrollTr=document.querySelector('.payrollTr')
      btnWage.addEventListener('click',function(){
       totalTableWage();
-      var TableWages=[]
+      let TableWages=[]
       TableWages.push({
       tableWageCode:tableWageCode.value,
-      listNameNvList:listNameNvList.value,
+      listNameNvLists:listNameNvLists.value,
       wordDay:wordDay.value,
       allowance:allowance.value,
       advanceMoney:advanceMoney.value,
       dates:dates.value,
       tableWageAdmin:tableWageAdmin.value,
      })
-     console.log(TableWages)
+   //   console.log(TableWages)
      TableWages.forEach(function(stt){
       payrollTr.innerHTML=`
                            <td>${stt.tableWageCode}</td>
@@ -604,6 +638,41 @@ function totalSraffs(total){
                            <td>${stt.tableWageAdmin}</td>`
      })
      })
+     //bang cong tac nhan vien
+     var itemBussinessCode=document.querySelector('#item-bussiness-code')
+     var listNameNvLists=document.querySelector('#list-name-nv-lists')
+     var bussinessDateBegin=document.querySelector('#bussiness-date-begin')
+     var bussinessDateFinish=document.querySelector('#bussiness-date-finish')
+     var bussinessPlace=document.querySelector('#bussiness-place')
+     var bussinessPurpose=document.querySelector('#bussiness-purpose')
+     var btnBussiness=document.querySelector('.btn-bussiness')
+     var businessTr=document.querySelector('.businessTr')
+     var tableBussinessAdmin=document.querySelector('#table-bussiness-admin')
+     btnBussiness.addEventListener('click',function(){
+      var TableBussines=[]
+      TableBussines.push({
+      itemBussinessCode:itemBussinessCode.value,
+      listNameNvLists:listNameNvLists.value,
+      bussinessDateBegin:bussinessDateBegin.value,
+      bussinessDateFinish:bussinessDateFinish.value,
+      bussinessPlace:bussinessPlace.value,
+      bussinessPurpose:bussinessPurpose.value,
+      tableBussinessAdmin:tableBussinessAdmin.value,
+     })
+     TableBussines.forEach(function(stt){
+      businessTr.innerHTML=`
+                           <td>${stt.itemBussinessCode}</td>
+                           <td>${stt.listNameNvLists}</td>
+                           <td>${stt.bussinessDateBegin}</td>
+                           <td>${stt.bussinessDateFinish}</td>
+                           <td>${stt.bussinessPlace}</td>
+                           <td>${stt.bussinessPurpose}</td>
+                           <td>${stt.tableBussinessAdmin}</td>`
+
+     })
+     console.log(TableBussines)
+   })
+   
      // bang luong da tinh
    function totalTableWage(){
       var totalTableWage=[]
@@ -638,22 +707,145 @@ function totalSraffs(total){
       listStaffs.forEach(function(indexs,stt){
          if(indexs.kiemtrajob=="làm việc"){
             SttResign++;
-            // console.log(listStaffs[SttResign])
          }else if(indexs.kiemtrajob=="nghỉ việc"){
             SttWord++;
-            console.log(listStaffs[SttWord])
+           
          }
           
-         //  console.log(listStaffs[SttResign])
           IndexWord.innerHTML=SttResign;
           indexResign.innerHTML=SttWord;
       })
      }
+   //loading
+   function loading(){
+      var loatAll=document.querySelector('.loatAll');
+      loatAll.classList.remove('move')
+      setTimeout(function(){
+         loatAll.classList.add('move')
+      },1000);
+   }
+// search nhan vien
+   var bodys=document.querySelector('body')
+   searchStaffFunction()
+   var listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
+   console.log(listStaffs)
+       function searchStaffFunction(){
+         var searchStaffInput=document.querySelector('.searchStaff-list-input input')  
+   var listStaffs=localStorage.getItem("list-staffs") ? JSON.parse(localStorage.getItem("list-staffs")) :[];
    
+         // listStaffs.push({
+         //       email:email.value,
+         //       fullname :fullname.value,
+         //       sdt:sdt.value,
+         //       cmnd:cmnd.value,
+         //       address:address.value,
+         //       kiemtrajob:kiemtrajob,
+         //       gender:gender,
+         // })
+      
+        var searchStaffList=document.querySelector('.searchStaff-list');
+        var tableSearchStaff=document.querySelector('#table-searchStaff')
+        searchStaffList.addEventListener('click',function(e){
+              e.stopPropagation()
+        })
+        var searchStaff=document.querySelector('.searchStaff');
+        searchStaff.addEventListener('click',function(){
+             searchStaff.classList.add('active')
+        })
+        var addStaffSearch=document.querySelector('.add-staff-search')
+        addStaffSearch.addEventListener('click',function(e){
+               
+               loading();
+               searchStaff.classList.remove('active')
+             e.stopPropagation()
+            
+        })
+        tableSearchStaff.addEventListener('click',function(e){
+             e.stopPropagation()
+       })
+
+       listStaffs.forEach(function(stt){
+         
+         var searchStaffItemDIV=document.createElement('div')
+         searchStaffItemDIV.classList.add('searchStaff-item')
+         var searchInfor=`
+                       <span class="searchStaff-item-p">${stt.fullname}</span>
+                         `
+               searchStaffItemDIV.innerHTML=searchInfor; 
+               searchStaffList.appendChild(searchStaffItemDIV)
+          searchStaffInput.addEventListener('input',function(e){
+                  var txtSearch= e.target.value.trim().toLowerCase();
+                 
+                  if(stt.fullname.toLowerCase().includes(txtSearch)){
+                     searchStaffItemDIV.classList.remove('move')
+                  }else{
+                     searchStaffItemDIV.classList.add('move')
+                  }
+           })
+         
+          
+     })
+     
+     var searchStaffItemDIVs=document.querySelectorAll('.searchStaff-item')
+    var tableSearchStaff=document.querySelector('#table-searchStaff')
+     searchStaffItemDIVs.forEach(function(stt){
+         
+          stt.addEventListener('click',function(e){
+            tableSearchStaff.classList.remove('move')
+           var ducdz= stt.querySelector('.searchStaff-item-p').innerHTML;
+            listStaffs.forEach(function(id){
+               
+               if(id.fullname==ducdz){
+                  tableSearchStaff.innerHTML=`
+                  <tr>   
+                         <th>Ho Va Ten</th>
+                         <th>Dia Chi Email </th>
+                         <th>So dien Thoai</th>
+                         <th>dia Chi</th>
+                         <th>So CMND</th>
+                         <th>Tinh Trang</th>
+                         <th>gioi tinh</th>
+                         </tr> 
+                          <tr>
+                             <td>${id.fullname}</td>
+                             <td>${id.email}</td>
+                             <td>${id.sdt}</td>
+                             <td>${id.address}</td>
+                             <td>${id.cmnd}</td>
+                             <td class="green">${id.kiemtrajob}</td>
+                             <td>${id.gender}</td>
+                         </tr>
+                  `
+                   console.log(id.email)
+               }
+            })
+          })
+     })
+
+}
+     // nut come back
+     var comeBack=document.querySelector('.comeBack')
+     function Comeback(){
+       var comeBack=document.querySelector('.comeBack')
+       comeBack.classList.remove('move')
+     }
      //tao cong tac
+     var menus=document.querySelector('.menu')
      var menuWordList=document.querySelector('.menu-word-list')
      var addWord=document.querySelector('#add-word');
      var tableWordBussinessList=document.querySelector('.table-word-bussiness-list')
+     var tableWordBussiness=document.querySelector('.table-word-bussiness')
+     addWord.addEventListener('click',function(e){
+           tableWordBussiness.classList.toggle('move')
+           e.stopPropagation()
+     })
+     
+     menus.addEventListener('click',function(){
+      tableWordBussiness.classList.add('move')
+      tableTaffTeamsALL.classList.add('move')
+      tableTaffTeams.classList.add('move')
+     })
+     
 
 
       

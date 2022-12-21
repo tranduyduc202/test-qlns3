@@ -13,472 +13,536 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body onload="listMember()">
-    <header>
-        <div class="menu">
-            <div class="menu-logo">
-                <img src="./img/download.png" alt="">
-                <h3>QLNS VMU</h3>
-            </div>
-             <ul class="menu-content">
-                <div class="menu-content-user">
-                    <img src="./img/icon-hacker.jpg" alt="">
-                    <div class="menu-content-user-text">
-                        <p>admin</p>
-                        <p class="menu-content-user-dots"><span class="user-dots"></span><span>online</span></p>
-                    </div>
+    <div class="backgrounds">
+        <header>
+            <div class="menu">
+                <div class="menu-logo">
+                    <img src="./img/download.png" alt="">
+                    <h3>QLNS VMU</h3>
                 </div>
-                <li class="move">+Cơ sở dữ liệu</li>
-                <li><i class='bx bxs-bar-chart-alt-2'></i>
-                  <span class="menu-scroll">Tổng Quan</span> </li>
-                <!-- <li>Chấm Công</li> -->
-                <li class="menu-li-Staff">
-                    <div class="staff-name menu-scroll">
-                     <i class="fa-solid fa-users-line"></i>  Nhân Viên <i class='bx bxs-chevron-left wage-arrow2'></i>
-                        <i class='bx bx-chevron-down arrow-right wage-arrow3 move'></i> <br>
-                    </div>
-                    <div class="staff-item move">
-                        <p class="menu-addStaff"><input type="radio" name="wage"> <span>Thêm Nhân Viên</span> <br></p>
-                         
-                         <p class="menu-EditStaff"><input type="radio" name="wage"> <span class="salary">Sửa xóa nhân viên</span></p>
-                         <p class="menu-InfoStaff"><input type="radio" name="wage"> <span>thông tin Nhân viên</span> <br></p>
-                         <p ><input type="radio" name="wage"> <span>Chức vụ</span> <br></p>
-                         <p ><input type="radio" name="wage"> <span>Trình độ</span> <br></p>
-                    </div>
-
-                </li>
-                <li class="wage"> 
-                    <div class="wage-list menu-scroll">
-                        <i class='bx bx-money'></i> Quản lý Lương <i class='bx bxs-chevron-left arrow-right wage-arrow'></i>
-                        <i class='bx bx-chevron-down arrow-right wage-arrow1 move'></i>
-                    </div>   
-                    <div class="table-salary move ">
-                        <p><input type="radio" name="wage"> <label>Bang tinh luong</label> <br></p>
-                         
-                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Tinh luong</span></p>
-                         
-                    </div>       
-                </li>
-                 
-                <li class="li6 menu-scroll">Quản Lý</li>
-                <li>
-                    <div class="menu-word">
-                        <i class="fa-solid fa-plane"></i> Quản lý công tác <i class='bx bxs-chevron-left arrow-right menu-icon-left'></i>
-                        <i class='bx bx-chevron-down arrow-right menu-icon-bottom move'></i>
-                    </div>   
-                     
-                    <div class="menu-word-list move">
-                        <p id="add-word"><input type="radio" name="wage" > <label>Tạo công tác</label> <br></p>     
-                         <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Danh sách công tác</span></p>
-                         
-                    </div>    
-                    
-                </li>
-               
-
-                <li>
-                    <div class="menu-Staff-group">
-                        <i class="fa-solid fa-people-roof"></i>Nhóm Nhân Viên <i class='bx bxs-chevron-left arrow-right menu-Staff-group-left'></i>
-                        <i class='bx bx-chevron-down arrow-right menu-Staff-group-bottom move'></i>
-                    </div>
-                    <div class="menu-Staff-group-list move">
-                        <p class="Staff-group-item"><input type="radio" name="wage"> <label>Tạo Nhóm</label> <br></p>     
-                         <p class="table-salary-table table-add-word"><input type="radio" name="wage"> <span class="salary">Danh sách Nhóm</span></p>
-                    </div>   
-                </li>
-                <li>
-                    <div class="menu-account-list">
-                        <i class='bx bxs-user'></i>Tài Khoản <i class='bx bxs-chevron-left arrow-right menu-account-bottom'></i>
-                        <i class='bx bx-chevron-down arrow-right menu-account-left move'></i>
-                    </div>
-                     
-                    <div class="menu-account move">
-                        <p onclick="loading()"><input type="radio" name="wage"> <label><a href="index.html">Đăng nhập</a></label> <br></p>     
-                         <p class="table-salary-table"  onclick="loading()"><input type="radio" name="wage"> <span class="salary"><a href="signup.html">Đăng ký tài khoản</a></span></p>
-                    </div>  
-                </li>
-             </ul>
-        </div>
-    </header>
-        <div class="content">
-            <div class="content-top">
-                <div class="header-top">
-                    <div class="header-top-icon">
-                        <i class='bx bx-menu'></i>
-                    </div>
-                     <span class="home-page">Trang Chủ</span>
-                     <span>Liên Hệ</span>
-                     <!-- <div class="header-top-search">
-                        <input type="text" >
-                        <i class='bx bx-search search'></i>
-                     </div> -->
-                </div>
-                <div class="header-top-2">
-                    <a href="#"><i class='bx bxl-windows'></i></a>
-                    <a href="#"><i class='bx bx-user'></i></a> <small>Admin</small>
-                </div>
-            </div>
-             <div class="content-body">
-                <div class="content-logo">
-                    <img src="./img/logo11.png" alt="">
-                </div>
-                <div class="content-add">
-                    <div class="add-staff">
-                        <span>Thêm nhân viên</span>
-                        <div class="add-staff-item add-Staff-move">
-                            <p>xem</p>
-                            <i class='bx bxs-right-arrow-circle'></i>
+                 <ul class="menu-content">
+                    <div class="menu-content-user">
+                        <img src="./img/icon-hacker.jpg" alt="">
+                        <div class="menu-content-user-text">
+                            <p>admin</p>
+                            <p class="menu-content-user-dots"><span class="user-dots"></span><span>online</span></p>
                         </div>
+                    </div>
+                    <li class="move">+Cơ sở dữ liệu</li>
+                    <li><i class='bx bxs-bar-chart-alt-2'></i>
+                      <span class="menu-scroll">Tổng Quan</span> </li>
+                    <!-- <li>Chấm Công</li> -->
+                    <li class="menu-li-Staff">
+                        <div class="staff-name menu-scroll">
+                         <i class="fa-solid fa-users-line"></i>  Nhân Viên <i class='bx bxs-chevron-left wage-arrow2'></i>
+                            <i class='bx bx-chevron-down arrow-right wage-arrow3 move'></i> <br>
+                        </div>
+                        <div class="staff-item move">
+                            <p class="menu-addStaff"><input type="radio" name="wage"> <span>Thêm Nhân Viên</span> <br></p>
+                             
+                             <p class="menu-EditStaff"><input type="radio" name="wage"> <span class="salary">Sửa xóa nhân viên</span></p>
+                             <p class="menu-InfoStaff"><input type="radio" name="wage"> <span>thông tin Nhân viên</span> <br></p>
+                             <p ><input type="radio" name="wage"> <span>Chức vụ</span> <br></p>
+                             <p ><input type="radio" name="wage"> <span>Trình độ</span> <br></p>
+                        </div>
+    
+                    </li>
+                    <li class="wage"> 
+                        <div class="wage-list menu-scroll">
+                            <i class='bx bx-money'></i> Quản lý Lương <i class='bx bxs-chevron-left arrow-right wage-arrow'></i>
+                            <i class='bx bx-chevron-down arrow-right wage-arrow1 move'></i>
+                        </div>   
+                        <div class="table-salary move ">
+                            <p><input type="radio" name="wage"> <label>Bang tinh luong</label> <br></p>
+                             
+                             <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Tinh luong</span></p>
+                             
+                        </div>       
+                    </li>
+                     
+                    <li class="li6 menu-scroll">Quản Lý</li>
+                    <li>
+                        <div class="menu-word">
+                            <i class="fa-solid fa-plane"></i> Quản lý công tác <i class='bx bxs-chevron-left arrow-right menu-icon-left'></i>
+                            <i class='bx bx-chevron-down arrow-right menu-icon-bottom move'></i>
+                        </div>   
+                         
+                        <div class="menu-word-list move">
+                            <p id="add-word"><input type="radio" name="wage" > <label>Tạo công tác</label> <br></p>     
+                             <p class="table-salary-table"><input type="radio" name="wage"> <span class="salary">Danh sách công tác</span></p>
+                             
+                        </div>    
                         
-                    </div>
-                    <div class="add-staff xanh Timekeeping">
-                        <span>xoa/sua nhan vien</span>
-                        <div class="add-staff-item xanh">
-                            <p>xem</p>
-                            <i class='bx bxs-right-arrow-circle'></i>
+                    </li>
+                   
+    
+                    <li>
+                        <div class="menu-Staff-group">
+                            <i class="fa-solid fa-people-roof"></i>Nhóm Nhân Viên <i class='bx bxs-chevron-left arrow-right menu-Staff-group-left'></i>
+                            <i class='bx bx-chevron-down arrow-right menu-Staff-group-bottom move'></i>
                         </div>
-                    </div>
-                    <div class="add-staff">
-                        <span>DSNV:</span>
-                        <a href="#">Đang làm việc </a>
-                        <div class="add-staff-item ">
-                            <p>xem</p>
-                            <i class='bx bxs-right-arrow-circle'></i>
+                        <div class="menu-Staff-group-list move">
+                            <p class="Staff-group-item"><input type="radio" name="wage"> <label>Tạo Nhóm</label> <br></p>     
+                             <p class="table-salary-table table-add-word"><input type="radio" name="wage"> <span class="salary">Danh sách Nhóm</span></p>
+                        </div>   
+                    </li>
+                    <li>
+                        <div class="menu-account-list">
+                            <i class='bx bxs-user'></i>Tài Khoản <i class='bx bxs-chevron-left arrow-right menu-account-bottom'></i>
+                            <i class='bx bx-chevron-down arrow-right menu-account-left move'></i>
                         </div>
-                    </div>
-                    <div class="add-staff xanh add-staff-search">
-                        <span>Tim kiếm NV</span>
-                        <div class="add-staff-item xanh add-staff-xanh">
-                            <p>xem</p>
-                            <i class='bx bxs-right-arrow-circle'></i>
+                         
+                        <div class="menu-account move">
+                            <p onclick="loading()"><input type="radio" name="wage"> <label><a href="index.html">Đăng nhập</a></label> <br></p>     
+                             <p class="table-salary-table"  onclick="loading()"><input type="radio" name="wage"> <span class="salary"><a href="signup.html">Đăng ký tài khoản</a></span></p>
+                        </div>  
+                    </li>
+                 </ul>
+            </div>
+        </header>
+            <div class="content">
+                <div class="content-top">
+                    <div class="header-top">
+                        <div class="header-top-icon">
+                            <i class='bx bx-menu'></i>
                         </div>
+                         <span class="home-page">Trang Chủ</span>
+                         <span>Liên Hệ</span>
+                         <!-- <div class="header-top-search">
+                            <input type="text" >
+                            <i class='bx bx-search search'></i>
+                         </div> -->
+                    </div>
+                    <div class="header-top-2">
+                        <a href="#"><span>0</span><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#"><span>0</span><i class="fa-regular fa-bell"></i></a>
+                        <a href="#"><span>0</span><i class="fa-regular fa-flag"></i></a>
+                        <a href="#"><i class="fa-solid fa-circle-user"></i></a> <small>Admin</small>
                     </div>
                 </div>
-                <div class="statisitcal">
-                    <div class="statisitcal-text">
-                        <span>Thống kê</span>
+                 <div class="content-body">
+                    <div class="content-logo">
+                        <img src="./img/logo11.png" alt="">
                     </div>
-                    <div class="statisitcal-content  ">
-                        <div class="statisitcal-item">
-                            <div class="statisitcal-chu">
-                                 <div class="statisitcal-chu-item">
-                                    <span>0 </span>
-                                    <p>Nhân Viên</p>
-                                 </div>
-                                 
-                                 <i class="fa-solid fa-users-line"></i>
+                    <div class="content-add">
+                        <div class="add-staff">
+                            <span>Thêm nhân viên</span>
+                            <div class="add-staff-item add-Staff-move">
+                                <p>xem</p>
+                                <i class='bx bxs-right-arrow-circle'></i>
                             </div>
-                             
-                            <div class="add-staff-item white infor-staff">
+                            
+                        </div>
+                        <div class="add-staff xanh Timekeeping">
+                            <span>xoa/sua nhan vien</span>
+                            <div class="add-staff-item xanh">
                                 <p>xem</p>
                                 <i class='bx bxs-right-arrow-circle'></i>
                             </div>
                         </div>
-                        <div class="statisitcal-item xanh">
-                            <div class="statisitcal-chu">
-                                 <div class="statisitcal-chu-item">
-                                    <span>0 </span>
-                                    <p>Phong Ban</p>
-                                 </div>
-                                 
-                                 <i class="fa-solid fa-building-user"></i>
-                            </div>
-                             
-                            <div class="add-staff-item xanh ">
+                        <div class="add-staff">
+                            <span>Phong Ban</span>
+                            <!-- <a href="#">Phong Ban</a> -->
+                            <div class="add-staff-item open-department">
                                 <p>xem</p>
                                 <i class='bx bxs-right-arrow-circle'></i>
                             </div>
                         </div>
-                        <div class="statisitcal-item vang ">
-                            <div class="statisitcal-chu">
-                                 <div class="statisitcal-chu-item">
-                                    <span class="IndexWord">0 </span>
-                                    <p>Đang Làm</p>
-                                 </div>
-                                 
-                                 <i class="fa-solid fa-user-check"></i>
-                            </div>
-                             
-                            <div class="add-staff-item vang">
-                                <p>xem</p>
-                                <i class='bx bxs-right-arrow-circle'></i>
-                            </div>
-                        </div>
-                        <div class="statisitcal-item xanhlam">
-                            <div class="statisitcal-chu">
-                                 <div class="statisitcal-chu-item">
-                                    <span class="indexResign">0 </span>
-                                    <p>Nghi Việc</p>
-                                 </div>
-                                 
-                                 <i class="fa-solid fa-user-pen"></i>
-                            </div>
-                             
-                            <div class="add-staff-item xanhlam">
+                        <div class="add-staff xanh add-staff-search">
+                            <span>Tim kiếm NV</span>
+                            <div class="add-staff-item xanh add-staff-xanh">
                                 <p>xem</p>
                                 <i class='bx bxs-right-arrow-circle'></i>
                             </div>
                         </div>
                     </div>
-                    <div class="board-Staff move">
-                        <h3>Thông Tinh Nhân Viên</h3>
-                        <form action="">
-                            <div class="board-Staff-item">  
-                                <span>Họ và tên</span>
-                                <input type="text" id="fullname">
-                                <small > </small> <br>
+                    <div class="statisitcal">
+                        <div class="statisitcal-text">
+                            <span>Thống kê</span>
+                        </div>
+                        <div class="statisitcal-content  ">
+                            <div class="statisitcal-item">
+                                <div class="statisitcal-chu">
+                                     <div class="statisitcal-chu-item">
+                                        <span>0 </span>
+                                        <p>Nhân Viên</p>
+                                     </div>
+                                     
+                                     <i class="fa-solid fa-users-line"></i>
+                                </div>
+                                 
+                                <div class="add-staff-item white infor-staff">
+                                    <p>xem</p>
+                                    <i class='bx bxs-right-arrow-circle'></i>
+                                </div>
                             </div>
-                            <div class="board-Staff-item">
-                                <span>Email</span>
-                                <input type="email" id="email">
-                                <small for=""> </small> <br>
+                            <div class="statisitcal-item xanh">
+                                <div class="statisitcal-chu">
+                                     <div class="statisitcal-chu-item">
+                                        <span class="phongbanstt">0 </span>
+                                        <p>Phong Ban</p>
+                                     </div>
+                                     
+                                     <i class="fa-solid fa-building-user"></i>
+                                </div>
+                                 
+                                <div class="add-staff-item xanh consult-department">
+                                    <p>xem</p>
+                                    <i class='bx bxs-right-arrow-circle'></i>
+                                </div>
                             </div>
-                            <div class="board-Staff-item">
-                                <span>số điện thoại</span>
-                                <input type="text" id="sdt">
-                                <small for=""> </small> <br>
+                            <div class="statisitcal-item vang ">
+                                <div class="statisitcal-chu">
+                                     <div class="statisitcal-chu-item">
+                                        <span class="IndexWord">0 </span>
+                                        <p>Đang Làm</p>
+                                     </div>
+                                     
+                                     <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                 
+                                <div class="add-staff-item vang">
+                                    <p>xem</p>
+                                    <i class='bx bxs-right-arrow-circle'></i>
+                                </div>
                             </div>
-                            <div class="board-Staff-item">
-                                <span>Địa chỉ</span>
-                                <input type="text" id="address">
-                                <small > </small> <br>
+                            <div class="statisitcal-item xanhlam">
+                                <div class="statisitcal-chu">
+                                     <div class="statisitcal-chu-item">
+                                        <span class="indexResign">0 </span>
+                                        <p>Nghi Việc</p>
+                                     </div>
+                                     
+                                     <i class="fa-solid fa-user-pen"></i>
+                                </div>
+                                 
+                                <div class="add-staff-item xanhlam">
+                                    <p>xem</p>
+                                    <i class='bx bxs-right-arrow-circle'></i>
+                                </div>
                             </div>
-                             
-                            <div class="board-Staff-item">
-                                <span>So CMND</span>
-                                <input type="text" id="cmnd">
+                        </div>
+                        <div class="board-Staff move">
+                            <h3>Thông Tinh Nhân Viên</h3>
+                            <form action="">
+                                <div class="board-Staff-item">  
+                                    <span>Họ và tên</span>
+                                    <input type="text" id="fullname">
+                                    <small > </small> <br>
+                                </div>
+                                <div class="board-Staff-item">
+                                    <span>Email</span>
+                                    <input type="email" id="email">
+                                    <small for=""> </small> <br>
+                                </div>
+                                <div class="board-Staff-item">
+                                    <span>số điện thoại</span>
+                                    <input type="text" id="sdt">
+                                    <small for=""> </small> <br>
+                                </div>
+                                <div class="board-Staff-item">
+                                    <span>Địa chỉ</span>
+                                    <input type="text" id="address">
+                                    <small > </small> <br>
+                                </div>
+                                 
+                                <div class="board-Staff-item">
+                                    <span>So CMND</span>
+                                    <input type="text" id="cmnd">
+                                    <small> </small> <br>
+                                </div>
+                                <div class="board-Staff-item  ">
+                                    <span>Tinh Trang</span>
+                                <input type="radio" name="word" id="job" value="1">Đang Làm
+                                <input type="radio" name="word" id="nojob" class="check-word" value="2">Nghỉ Việc
                                 <small> </small> <br>
-                            </div>
-                            <div class="board-Staff-item  ">
-                                <span>Tinh Trang</span>
-                            <input type="radio" name="word" id="job" value="1">Đang Làm
-                            <input type="radio" name="word" id="nojob" class="check-word" value="2">Nghỉ Việc
-                            <small> </small> <br>
-                            </div>
-                            
-                            <div class="board-Staff-item ">
-                                <span>Giới Tính</span>
-                            <input type="radio"   name="gender" id="male" value="Nam">Nam
-                            <input type="radio" name="gender" id="famale" class="check-seed" value="Nu">Nu 
-                            <small> </small> <br>
-                            </div>
-                            <div class="board-Staff-item  ">
-                                <input id="index" type="hidden">
-                            </div>
-                            <button id="submit-save" class="add-submit" type="submit">Lưu lại</button>
-                            <button id="submit-update" style="display:none">update</button>
-                        </form>
-                         
+                                </div>
+                                
+                                <div class="board-Staff-item ">
+                                    <span>Giới Tính</span>
+                                <input type="radio"   name="gender" id="male" value="Nam">Nam
+                                <input type="radio" name="gender" id="famale" class="check-seed" value="Nu">Nu 
+                                <small> </small> <br>
+                                </div>
+                                <div class="board-Staff-item  ">
+                                    <input id="index" type="hidden">
+                                </div>
+                                <button id="submit-save" class="add-submit" type="submit">Lưu lại</button>
+                                <button id="submit-update" style="display:none">update</button>
+                            </form>
+                             
+                        </div>
+                        <table  width="100%" id="table-info" class="infor-Member move">
+                               
+                                  
+                        </table>
+                        <table  width="100%" class="edit-staff move">
+                        </table>
                     </div>
-                    <table  width="100%" id="table-info" class="infor-Member move">
-                           
-                              
-                    </table>
-                    <table  width="100%" class="edit-staff move">
-                    </table>
-                </div>
-             </div>
-             <!-- quan ly luong -->
-                 <div class="table-wage move1">
-                    <ul class="table-wage-list">
-
-                        <li><h3>Tính Lương Nhân Viên</h3></li>
-                        <li><p>Mã Lương</p><input  type="text" id="table-wage-code" value="6868" placeholder="6868"></li>
-                        <li class="list-name-nv">
-                            <p>Nhân Viên</p>
-                            <select name="" id="list-name-nv-list">
-                                <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
-
-                            </select>
-                        </li>
-                        <li>
-                            <p>Số Ngày Công</p>
-                            <input type="number" id="word-day" placeholder="Nhap so ngay cong"  min="1" max="31">
-                        </li>
-                        <li>
-                            <p>Phụ Cấp(phụ cấp chức vụ)</p>
-                            <input type="text" id="allowance" placeholder="chọn phụ cấp (1000vnđ = 1)">
-                        </li>
-                        <li>
-                            <p>Tạm Ứng</p>
-                            <input type="namber" id="advance-money" placeholder="(1000vnđ = 1)">
-                        </li>
-                        <li>
-                            <p>Ngày tháng</p>
-                            <input type="date" id="date">
-                        </li>
-                        <li> <p>Người Tạo</p> <input type="text" id="table-wage-admin" value="admin" placeholder="admin"></li>
-                        <button class="btn-wage">Tính Lương Nhân Viên</button>
-                    </ul>
                  </div>
-                 <!-- bang tinh cong tac -->
-                 <div class="table-word-bussiness move">
-                    <ul class="table-word-bussiness-list">
-
-                        <li><h3>Công Tác</h3></li>
-                        <li><p>mã công tác</p><input  type="text" id="item-bussiness-code" value="6868" placeholder="6868"></li>
-                        <li cladd-wordass="item-bussiness-nv">
-                            <p>Chọn Nhân Viên</p>
-                            <select name="" id="list-name-nv-lists">
-                                <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
-
-                            </select>
-                        </li>
-                        <li>
-                            <p>Ngày Bắt đầu</p>
-                            <input type="date" id="bussiness-date-begin">
-                        </li>
-                        <li>
-                            <p>Ngày Kết Thúc</p>
-                            <input type="date" id="bussiness-date-finish">
-                        </li>       
-                        <li>
-                            <p>Địa Điểm công tác</p>
-                            <input type="text" id="bussiness-place" placeholder="chọn phụ cấp">
-                        </li>
-                        <li>
-                            <p>Mục Đích Công Tác</p>
-                            <input type="namber" id="bussiness-purpose" placeholder="0">
-                        </li>
-                       
-                        <li> <p>Người Tạo</p> <input type="text" id="table-bussiness-admin" value="admin" placeholder="admin"></li>
-                        <button class="btn-bussiness">Luu thong tin</button>
-                    </ul>
-                </div>
-                <!-- bang tao nhom nhan vien -->
-                <div class="table-taffTeams move">
-                    <ul class="table-taffTeams-list">
-
-                        <li><h3>Nhóm Nhân Viên</h3></li>
-                        <li><p>mã Nhóm</p><input  type="text" id="table-taffTeams-code" value="6868" placeholder="6868"></li>
-                       
-                        <li>
-                            <p>Tên Nhóm</p>
-                            <input type="text" id="table-taffTeams-name">
-                        </li>
-                        <li>
-                            <p>Ngày Bắt đầu</p>
-                            <input type="date" id="table-taffTeams-date">
-                        </li>
-                        <li> <p>Người Tạo</p> <input type="text" id="table-taffTeams-admin" value="admin" placeholder="admin"></li>
-                        <button class="btn-table-taffTeams">Lưu thông tin</button>
-                    </ul>
-                </div>
-                <!-- bang nhom nhan vien -->
-                <div class="table-taffTeamsALL move">
-                    <h3>quản lý nhóm</h3>
-                    <div class="table-taffTeamsALL-menu">
-                        <div class="table-taffTeamsALL-content">
-                        <div class="table-taffTeamsALL-list">
-                            <div class="table-taffTeamsALL-item">
-                              <span>Nhóm sự kiện</span>
-                              <p>thông tin</p>
-                            </div>
-                            <i class="fa-solid fa-users-line"></i>
-                        </div>
-                        <div class="table-taffTeamsALL-xoa">
-                            <span>xóa nhóm</span>
-                        </div>
-                       </div>
-                       
-                       
-                        
-                    </div>
-
-                </div>
-                 <!-- bang luong da tinh -->
-            </div>
-            <div class="payroll-list move">
-                <div class="payroll move">
-                    <table >
-                        <tr style="background-color:#4392e2;">
-                            <th>mã lương</th>
-                            <th>Nhân Viên</th>
-                            <th>Số Ngày Công</th>
-                            <th>Phụ Cấp</th>
-                            <th>Tạm Ứng</th>
-                            <th>Ngày Tháng</th>
-                            <th>Người tạo</th>
-                        </tr>
-                        <tr class="payrollTr">
-                            
-                        </tr>
+                 <!-- quan ly luong -->
+                     <div class="table-wage move1">
+                        <ul class="table-wage-list">
     
-                    </table>
-                    <div class="total-money">tong thu nhap:</div>
-            </div>
-            <div class="comeBack move">
-                <img src="./img/logo-comeback.png" alt="">
-              </div>
-            </div>
-            <!-- bang nhan vien cong tac -->
-            <div class="menu-business move">
-                <div class="menu-business-list move">
-                    <table >
-                        <tr style="background-color:#4392e2;">
-                            <th>mã công tác</th>
-                            <th>Nhân Viên</th>
-                            <th>Ngày bắt đầu</th>
-                            <th>Ngày kết thúc</th>
-                            <th>Đia điểm công tác</th>
-                            <th>Mục đích công tác</th>
-                            <th>Người tạo</th>
-                        </tr>
-                        
-                        <tr class="businessTr">
-                            <td>ducdz</td>
-                        </tr>
+                            <li><h3>Tính Lương Nhân Viên</h3></li>
+                            <li><p>Mã Lương</p><input  type="text" id="table-wage-code" value="6868" placeholder="6868"></li>
+                            <li class="list-name-nv">
+                                <p>Nhân Viên</p>
+                                <select name="" id="list-name-nv-list">
+                                    <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
     
-                    </table>
-                    
-            </div>
-            <div class="menu-business-comeBack move">
-                <img src="./img/logo-comeback.png" alt="">
-              </div>
-            </div>
-            <!-- loat -->
-            <div class="loatAll move">
-        
-                <div class="loat">
-            
-                </div>
-              </div>
-              <!-- //search nhan vien -->
-              <div class="searchStaff active">
-                <div class="searchStaff-T">
-                    <div class="searchStaff-list">
-                        <h2>search</h2>
-                        <div class="searchStaff-list-input">
-                            <input type="text">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                                </select>
+                            </li>
+                            <li>
+                                <p>Số Ngày Công</p>
+                                <input type="number" id="word-day" placeholder="Nhap so ngay cong"  min="1" max="31">
+                            </li>
+                            <li>
+                                <p>Phụ Cấp(phụ cấp chức vụ)</p>
+                                <input type="text" id="allowance" placeholder="chọn phụ cấp (1000vnđ = 1)">
+                            </li>
+                            <li>
+                                <p>Tạm Ứng</p>
+                                <input type="namber" id="advance-money" placeholder="(1000vnđ = 1)">
+                            </li>
+                            <li>
+                                <p>Ngày tháng</p>
+                                <input type="date" id="date">
+                            </li>
+                            <li> <p>Người Tạo</p> <input type="text" id="table-wage-admin" value="admin" placeholder="admin"></li>
+                            <button class="btn-wage">Tính Lương Nhân Viên</button>
+                        </ul>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
                         </div>
-                       
-                    </div>
-                    <table  width="100%" id="table-searchStaff" class="move">
-                         <tr>   
-                         <th>Ho Va Ten</th>
-                         <th>Dia Chi Email </th>
-                         <th>So dien Thoai</th>
-                         <th>dia Chi</th>
-                         <th>So CMND</th>
-                         <th>Tinh Trang</th>
-                         <th>gioi tinh</th>
-                         </tr> 
-                          <tr>
-                             <td>tran duy duc</td>
-                             <td>tranduc@gmail.com</td>
-                             <td>098923323</td>
-                             <td>vb hai phong</td>
-                             <td>48384090384028502</td>
-                             <td class="green">nghi viec</td>
-                             <td>nam</td>
-                         </tr>
+                     </div>
+                     <!-- bang tinh cong tac -->
+                     <div class="table-word-bussiness move">
+                        <ul class="table-word-bussiness-list">
+    
+                            <li><h3>Công Tác</h3></li>
+                            <li><p>mã công tác</p><input  type="text" id="item-bussiness-code" value="6868" placeholder="6868"></li>
+                            <li cladd-wordass="item-bussiness-nv">
+                                <p>Chọn Nhân Viên</p>
+                                <select name="" id="list-name-nv-lists">
+                                    <option value="--chon nhan vien--">--Chọn Nhân Viên--</option>
+    
+                                </select>
+                            </li>
+                            <li>
+                                <p>Ngày Bắt đầu</p>
+                                <input type="date" id="bussiness-date-begin">
+                            </li>
+                            <li>
+                                <p>Ngày Kết Thúc</p>
+                                <input type="date" id="bussiness-date-finish">
+                            </li>       
+                            <li>
+                                <p>Địa Điểm công tác</p>
+                                <input type="text" id="bussiness-place" placeholder="chọn phụ cấp">
+                            </li>
+                            <li>
+                                <p>Mục Đích Công Tác</p>
+                                <input type="namber" id="bussiness-purpose" placeholder="0">
+                            </li>
                            
-                 </table>
+                            <li> <p>Người Tạo</p> <input type="text" id="table-bussiness-admin" value="admin" placeholder="admin"></li>
+                            <button class="btn-bussiness">Luu thong tin</button>
+                        </ul>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
+                        </div>
+                       
+                    </div>
+                    <!-- bang tao nhom nhan vien -->
+                    <div class="table-taffTeams move">
+                        <ul class="table-taffTeams-list">
+    
+                            <li><h3>Nhóm Nhân Viên</h3></li>
+                            <li><p>mã Nhóm</p><input  type="text" id="table-taffTeams-code" value="6868" placeholder="6868"></li>
+                           
+                            <li>
+                                <p>Tên Nhóm</p>
+                                <input type="text" id="table-taffTeams-name">
+                            </li>
+                            <li>
+                                <p>Ngày Bắt đầu</p>
+                                <input type="date" id="table-taffTeams-date">
+                            </li>
+                            <li> <p>Người Tạo</p> <input type="text" id="table-taffTeams-admin" value="admin" placeholder="admin"></li>
+                            <button class="btn-table-taffTeams">Lưu thông tin</button>
+                        </ul>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
+                        </div>
+                    </div>
+                    <!-- bang nhom nhan vien -->
+                    <div class="table-taffTeamsALL move">
+                        <h3>quản lý nhóm</h3>
+                        <div class="table-taffTeamsALL-menu">
+                            <div class="table-taffTeamsALL-content">
+                            <div class="table-taffTeamsALL-list">
+                                <div class="table-taffTeamsALL-item">
+                                  <span>Nhóm sự kiện</span>
+                                  <p>thông tin</p>
+                                </div>
+                                <i class="fa-solid fa-users-line"></i>
+                            </div>
+                            <div class="table-taffTeamsALL-xoa">
+                                <span>xóa nhóm</span>
+                            </div>
+                           </div>      
+                        </div>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
+                        </div>
+                    </div>
+                    <!-- bang tao phong ban -->
+                    <div class="table-department move">
+                        <ul class="table-department-list">
+    
+                            <li><h3>Tạo Phòng Ban</h3></li>
+                            <li><p>mã Phòng</p><input  type="text" id="table-department-code" value="6868" placeholder="6868"></li>
+                           
+                            <li>
+                                <p>Tên Phòng Ban</p>
+                                <input type="text" id="table-department-name">
+                            </li>
+                            <li>
+                                <p>Ngày Bắt đầu</p>
+                                <input type="date" id="table-department-date">
+                            </li>
+                            <li> <p>Người Tạo</p> <input type="text" id="table-department-admin" value="admin" placeholder="admin"></li>
+                            <button class="btn-table-department">Lưu thông tin</button>
+                        </ul>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
+                        </div>
+                    </div>
+                    <!-- bang phong ban -->
+                    <div class="table-departmentALL move">
+                        <h3>quản lý nhóm</h3>
+                        <div class="table-departmentALL-menu">
+                            <!-- <div class="table-departmentALL-content">
+                            <div class="table-departmentALL-list">
+                                <div class="table-departmentALL-item">
+                                  <span>Nhóm sự kiện</span>
+                                  <p>thông tin</p>
+                                </div>
+                                <i class="fa-solid fa-users-line"></i>
+                            </div>
+                            <div class="table-departmentALL-xoa">
+                                <span>xóa nhóm</span>
+                            </div>
+                           </div>       -->
+                        </div>
+                        <div class="table-department-clone">
+                            <i class="fa-solid fa-rectangle-xmark"></i>
+                        </div>
+                    </div>
+                     <!-- bang luong da tinh -->
                 </div>
+                <div class="payroll-list move">
+                    <div class="payroll move">
+                        <table >
+                            <tr style="background-color:#4392e2;">
+                                <th>mã lương</th>
+                                <th>Nhân Viên</th>
+                                <th>Số Ngày Công</th>
+                                <th>Phụ Cấp</th>
+                                <th>Tạm Ứng</th>
+                                <th>Ngày Tháng</th>
+                                <th>Người tạo</th>
+                            </tr>
+                            <tr class="payrollTr">
+                                
+                            </tr>
+        
+                        </table>
+                        <div class="total-money">tong thu nhap:</div>
+                </div>
+                <div class="comeBack move">
+                    <img src="./img/logo-comeback.png" alt="">
+                  </div>
+                </div>
+                <!-- bang nhan vien cong tac -->
+                <div class="menu-business move">
+                    <div class="menu-business-list move">
+                        <table >
+                            <tr style="background-color:#4392e2;">
+                                <th>mã công tác</th>
+                                <th>Nhân Viên</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Đia điểm công tác</th>
+                                <th>Mục đích công tác</th>
+                                <th>Người tạo</th>
+                            </tr>
+                            
+                            <tr class="businessTr">
+                                <td>ducdz</td>
+                            </tr>
+        
+                        </table>
+                        
+                </div>
+                <div class="menu-business-comeBack move">
+                    <img src="./img/logo-comeback.png" alt="">
+                  </div>
+                </div>
+                <!-- loat -->
+                <div class="loatAll move">
+            
+                    <div class="loat">
                 
-              </div>
+                    </div>
+                  </div>
+                  <!-- //search nhan vien -->
+                  <div class="searchStaff active">
+                    <div class="searchStaff-T">
+                        <div class="searchStaff-list">
+                            <h2>search</h2>
+                            <div class="searchStaff-list-input">
+                                <input type="text">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                           
+                        </div>
+                        <table  width="100%" id="table-searchStaff" class="move">
+                             <tr>   
+                             <th>Ho Va Ten</th>
+                             <th>Dia Chi Email </th>
+                             <th>So dien Thoai</th>
+                             <th>dia Chi</th>
+                             <th>So CMND</th>
+                             <th>Tinh Trang</th>
+                             <th>gioi tinh</th>
+                             </tr> 
+                              <tr>
+                                 <td>tran duy duc</td>
+                                 <td>tranduc@gmail.com</td>
+                                 <td>098923323</td>
+                                 <td>vb hai phong</td>
+                                 <td>48384090384028502</td>
+                                 <td class="green">nghi viec</td>
+                                 <td>nam</td>
+                             </tr>
+                               
+                     </table>
+                    </div>
+                    <div class="menu-searchStaff-comeBack move">
+                        <img src="./img/logo-comeback.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="background">
+    
+                  </div>
+    </div>
+   
               
          <script src="./index.js"></script>
      
 </body>
+
 </html>

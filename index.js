@@ -178,7 +178,6 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
                   
                   }
                  listStaffs.push(abc)
-                 
                  localStorage.setItem("list-staffs",JSON.stringify(listStaffs))
                  listMember()
             email.value=' ',fullname.value='',sdt.value='',cmnd.value='',address.value=''
@@ -192,6 +191,7 @@ var addStaffMoves=document.querySelectorAll('.add-staff-item');
  })
   
  function listMember(){
+   qwert()
       var inforMember=document.querySelector('.infor-Member')
       var trs=`
       <tr>   
@@ -844,8 +844,97 @@ function totalSraffs(total){
       tableWordBussiness.classList.add('move')
       tableTaffTeamsALL.classList.add('move')
       tableTaffTeams.classList.add('move')
+      tableDepartment.classList.add('move')
+      tableDepartmentALL.classList.add('move')
      })
+   //   open phong ban
+   var openDepartment=document.querySelector('.open-department')
+   var tableDepartment=document.querySelector('.table-department')
+   var btnTableDepartment=document.querySelector('.btn-table-department')
+   var tableDepartmentALL=document.querySelector('.table-departmentALL')
+   var tableDepartmentName=document.querySelector('#table-department-name')
+   var tableDepartmentDate=document.querySelector('#table-department-date')
+   var tableDepartmentALLMenu=document.querySelector('.table-departmentALL-menu');
+   openDepartment.addEventListener('click',function(){
+      tableDepartment.classList.toggle('move')
+   })
+   btnTableDepartment.addEventListener('click',function(){
+      tableDepartmentALL.classList.remove('move')
+      let DepartmentStaffs=localStorage.getItem("Department-staffs") ? JSON.parse(localStorage.getItem("Department-staffs")) :[];
+      // var tableDepartment=[];
+      DepartmentStaffs.push({
+         tableDepartmentName:tableDepartmentName.value,
+         tableDepartmentDate:tableDepartmentDate.value,
+      })
+      localStorage.setItem("Department-staffs",JSON.stringify(DepartmentStaffs))
+     console.log(DepartmentStaffs)
+     qwert()
+   })
+   function qwert(){
+      let DepartmentStaffs=localStorage.getItem("Department-staffs") ? JSON.parse(localStorage.getItem("Department-staffs")) :[];
+      DepartmentStaffs.forEach(function(stt,id){
+         var phongbanstt=document.querySelector('.phongbanstt')
+         var tableDepartmentID=id;
+         id++;
+        var tableDepartmentSTT=id;
+        
+         var tableDepartmentALLMenu=document.querySelector('.table-departmentALL-menu')
+         let div=document.createElement('div');
+         div.classList.add('table-departmentALL-content')
+         div.innerHTML=`
+                          <div class="table-departmentALL-list">
+                          <div class="table-departmentALL-item">
+                            <span>${stt.tableDepartmentName}</span>
+                            <p>thông tin</p>
+                          </div>
+                          <i class="fa-solid fa-users-line"></i>
+                      </div>
+                      <div class="table-departmentALL-xoa">
+                          <span onclick="DeleteDepartment(${tableDepartmentID})">xóa nhóm</span>
+                      </div>
+                     `         
+                     phongbanstt.innerHTML=tableDepartmentSTT;  
+                     tableDepartmentALLMenu.appendChild(div) 
+             
+      })
+                   
+   }
+   function DeleteDepartment(tableDepartmentID){
+      let DepartmentStaffs=localStorage.getItem("Department-staffs") ? JSON.parse(localStorage.getItem("Department-staffs")) :[];
+      console.log(DepartmentStaffs)
+      console.log(tableDepartmentID)
+      DepartmentStaffs.splice(tableDepartmentID,1);
+      localStorage.setItem("Department-staffs",JSON.stringify(DepartmentStaffs))
+      console.log(DepartmentStaffs)
+      DepartmentStaffs.forEach(function(stt){
+         tableDepartmentALLMenu.innerHTML=`
+         <div class="table-taffTeamsALL-content">
+         <div class="table-taffTeamsALL-list">
+             <div class="table-taffTeamsALL-item">
+               <span>${stt.tableDepartmentName}</span>
+               <p>thông tin</p>
+             </div>
+             <i class="fa-solid fa-users-line"></i>
+         </div>
+         <div class="table-taffTeamsALL-xoa">
+             <span>xóa nhóm</span>
+         </div>
+        </div>     
+         `
+      })
+    
+      
+   }
+   var consultDepartment=document.querySelector('.consult-department')
+         consultDepartment.addEventListener('click',function(){
+            tableDepartmentALL.classList.toggle('move')
+         })
+var clone=document.querySelectorAll('.table-department-clone')
+    clone.forEach(function(stt){
+          stt.addEventListener('click',function(){
+            reloads()
+      })
+    })
      
-
 
       

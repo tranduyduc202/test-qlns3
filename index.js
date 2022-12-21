@@ -532,10 +532,15 @@ function totalSraffs(total){
      var payrollList=document.querySelector('.payroll-list');
      var btnWage=document.querySelector('.btn-wage')
      var payroll=document.querySelector('.payroll')
+
      btnWage.addEventListener('click',function(){
       payrollList.classList.remove('move')
       comeBack.classList.remove('move')
 
+     })
+     var tableSalaryCalculate=document.querySelector('.table-salary-calculate')
+     tableSalaryCalculate.addEventListener('click',function(){
+      payrollList.classList.remove('move')
      })
      //menu-bang-cong-tac
      var btnBussiness=document.querySelector('.btn-bussiness')
@@ -606,6 +611,7 @@ function totalSraffs(total){
      })
      //bang luong da tinh
      var listNameNvList=document.querySelector('#list-name-nv-list')
+     console.log(listNameNvLists)
      var wordDay=document.querySelector('#word-day')
      var allowance=document.querySelector('#allowance')
      var advanceMoney=document.querySelector('#advance-money')
@@ -619,7 +625,7 @@ function totalSraffs(total){
       let TableWages=[]
       TableWages.push({
       tableWageCode:tableWageCode.value,
-      listNameNvLists:listNameNvLists.value,
+      listNameNvList:listNameNvList.value,
       wordDay:wordDay.value,
       allowance:allowance.value,
       advanceMoney:advanceMoney.value,

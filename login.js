@@ -2,18 +2,19 @@ let username = document.getElementById("username");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let btnLogin = document.querySelector(".btn-login");
-
+// let passwordAll=document.getElementById('passwordAll')
 btnLogin.addEventListener("click", (e) => {
   e.preventDefault();
   let user = {
     username: username.value,
     email: email.value,
     password: password.value,
+    // passwordAll:passwordAll.value,
   };
   console.log(user);
   let json = JSON.stringify(user);
   console.log(localStorage.getItem(username.value))
-  if (!username.value || !email.value || !password.value) {
+  if (!username.value || !email.value || !password.value ) {
     alert("vui long nhap day du thong tin");
   }
   if(localStorage.getItem(username.value)==json){
